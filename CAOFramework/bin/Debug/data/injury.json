@@ -1,0 +1,87 @@
+﻿{
+  "Terms": {
+    "MonsterWasInjured": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "Signals.Injury.Target",
+        "ValueToCheck": "Monster"
+      }
+    },
+    "PlayerWasInjured": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "Signals.Injury.Target",
+        "ValueToCheck": "Player"
+      }
+    }
+  },
+  "Conditions": {
+  },
+  "Actions": {
+  },
+  "Outcomes": {
+    "MonsterInjury": {
+      "ParentStage": "Injury",
+      "ValidityCondition": "MonsterWasInjured",
+      "SetsStage": "NONE",
+      "Steps": [
+        {
+          "Function": "MoveObjectToProperty",
+          "Parameters": {
+            "Source": "Signals",
+            "Destination": "Monster",
+            "Property": "Injury",
+            "Description": "A <Signals.Injury.Severity> injury occurs on the monster!",
+            "Roles": [
+              {
+                "Path": "Player",
+                "Details": {
+                  "Note": "The player was victorious",
+                  "tags": [ "victory" ]
+                }
+              },
+              {
+                "Path": "Monster",
+
+                "Details": {
+                  "tags": [ "injury" ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PlayerInjury": {
+      "ParentStage": "Injury",
+      "ValidityCondition": "PlayerWasInjured",
+      "SetsStage": "NONE",
+      "Steps": [
+        {
+          "Function": "MoveObjectToProperty",
+          "Parameters": {
+            "Source": "Signals",
+            "Destination": "Player",
+            "Property": "Injury",
+            "Description": "A <Signals.Injury.Severity> injury occurs on the player!",
+            "Roles": [
+              {
+                "Path": "Player",
+                "Details": {
+                  "Note": "This is additional detail in the memory",
+                  "tags": [ "injury" ]
+                }
+              },
+              {
+                "Path": "Monster",
+                "Details": {
+                  "tags": [ "victory" ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "Terms": {
+    "Disabled": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "CurrentActivity",
+        "ValueToCheck": "NONE"
+      }
+    },
+    "PlayerIsOnAdventure": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "CurrentActivity",
+        "ValueToCheck": "Adventuring"
+      }
+    },
+    "PlayerIsTraining": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "CurrentActivity",
+        "ValueToCheck": "Training"
+      }
+    },
+    "SelectAdventure": {
+      "TermFunction": "CheckSelectedAction",
+      "Parameters": {
+        "IsSelectedAction": "GoAdventure"
+      }
+    }
+  },
+  "Conditions": {
+    "EmbarkingOnAdventure": {
+      "ValidationMethod": "AllMustBeTrue",
+      "Terms": [
+        "PlayerIsTraining",
+        "SelectAdventure"
+      ]
+    }
+  },
+  "Actions": {
+    "GoAdventure": {
+      "ValidityCondition": "PlayerIsTraining",
+      "Description": "Ready to embark on adventure!"
+    }
+  },
+  "Outcomes": {
+    "BeginsAdventure": {
+      "ValidityCondition": "EmbarkingOnAdventure",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Adventuring",
+        "Description": "Embarks on the adventure!"
+      }
+    },
+    "EncounteredAMonster": {
+      "ValidityCondition": "PlayerIsOnAdventure",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Monster",
+        "Description": "Encounters a monster!"
+      }
+    },
+    "EncounteredAVista": {
+      "ValidityCondition": "Disabled",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Vista",
+        "Description": "Encounters a beautiful vista!"
+      }
+    },
+    "EncounteredAnNPC": {
+      "ValidityCondition": "Disabled",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "NPC",
+        "Description": "Encounters a friendly NPC!"
+      }
+    },
+    "FindsTreasure": {
+      "ValidityCondition": "PlayerIsOnAdventure",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Training",
+        "Description": "Finds some treasure!  Time to go home!",
+        "CompletesCurrentAction": "true"
+      }
+    }
+  }
+}

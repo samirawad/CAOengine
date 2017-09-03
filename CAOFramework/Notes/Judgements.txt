@@ -1,0 +1,13 @@
+﻿The judgements of the actor and target of an event depend upon the following:
+- The tags that the observer has already assigned to the actor and target
+- The ideals which the actor upholds or forsakes for the event.
+
+How do we catagorize the feelings that actors have towards one another?  
+The most concrete way would be by what they want from the object of the feeling:
+  What they physically want to do or see happen to the objecty of their feeling
+	- to kill
+	- to protect
+  
+ 
+
+

@@ -1,0 +1,45 @@
+{
+  "Flirt": {
+    "Comment": "If the observer is attracted to the actor of the flirt, and the target of the flirt is a rival, the observer is now jealous of the target",
+    "Actor": {
+      "Jealous": {
+        "All": [
+          { "ActorAny": [ "Partner", "Attracted" ] },
+          { "TargetAny": [ "Attractive" ] }
+        ]
+      }
+    },
+    "Target": {
+      "Envious": {
+        "All": [
+          { "ActortAll": [ "Attractive" ] },
+          {
+            "Any": [
+              { "SelfAny": [ "Depressed", "Insecure", "Shy" ] },
+              {
+                "All": [
+                  { "TargetAny": [ "Attractive", "Charming", "Rich" ] },
+                  { "SelfAny": [ "Ugly", "Stupid", "Poor" ] }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "Proud": {
+        "TargetAny": [ "Offspring", "Friend" ]
+      }
+    },
+    "Self": {
+      "Anger": {
+        "All": [
+          { "ActorAny": [ "Partner", "Attracted" ] },
+          { "TargetAny": [ "Rival" ] }
+        ]
+      }
+    }
+  },
+  "Liberate": {
+
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Injury": {
+    "Target": "InjuryTarget",
+    "Severity": {
+      "SelectOne": {
+        "selection": [ "superficial", "minor", "serious", "dire", "terminal" ]
+      }
+    }
+  }
+}

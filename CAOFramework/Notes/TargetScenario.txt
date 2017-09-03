@@ -1,0 +1,5 @@
+﻿
+The labels which are affixed to an agent in an event are a function of:
+- What the observer believes to be true.
+- Their current opinion of the 
+	

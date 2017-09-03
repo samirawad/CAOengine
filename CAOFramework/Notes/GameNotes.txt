@@ -1,0 +1,88 @@
+﻿- Encounter stages
+	- encounter prediction?
+		- by skill of agent, things like tracks, recent events
+	- encounter assesment
+		- Asses the encounter, how dangerous it is? What is a likely outcome?
+	- Actual encounter events
+		- friendly / unfriendly
+- Encounters of all kinds should also serve as a means of uncovering the personality traits of the party memebers.
+	- groups and ideals priority
+	- group definitions
+
+- The opinions and judgements characters have towards one another depend on commonalities.  The degree to which they feel relateable.
+- Perhaps we can use the idea of ideals and bonds.  
+
+SELECTIONS:
+- The final result of a selection is a dictionary of item paths which satisfy the conditions.  When the 'From' clause evaluates, we're seeding the dictionary with the previous values.
+- If any of the dictionary entries are blank, then we can fail the associated action or outcome.
+
+The opinion of Actor A1 on Actor A2 depends on the interatction of A1's traits with the memories where A2 plays a role.
+Accessing an agent's list of memories which define their relationship to another character is a good way to create some storytelling moments dynamically.
+
+It kinda gets complicated because the same action could be interpreted differently even by the same Actor.  A violent act towards a friend vs an enemy for example
+
+Both occurences and actors are judged.
+When an actor is part of an occurence they judge the actors by placing a type on them.
+- Actor A thinks Actor B is a 'type'
+- Actors have a preconcieved opinion of types, and place them in an order of importance for certain actions and feelings...?
+- Drama occurs when something changes.
+	- The order of imporatnce of a 'type'
+	- The placing of a type on an actor by another
+A person might think it's important to protect both friends and family. 
+A good narrative event would be one where the Actor must:
+	- Choose which is more important (order them)
+	- Place or remove another actor from that group
+	- Change their preconception of member of that group
+There are good paralels between what I'm trying to define as an 'occurence' and how we set up a compelling scene.
+
+For now, we could just have a simple ordering of groups.  The most important groups are the ones the actor want to 
+protect, emulate, befriend
+
+The different groups are ordered within the catagories of tribe and mate.  Tribe is who they identify with,
+Mate is who they find desireable
+
+Each Actor has these groups defined in their head, and attached to each group are a set of properties which describe how
+that group behaves.  The development of an Actor is essentially the formation of the definitions of these groups and who belongs to them.
+
+Loosely, a group is defined by how that group would behave in a situation.  This is the group's ideals and values.  The more important
+a group is to an actor, the greater they will value the ideals of that group.
+
+Self is a special group of one, but it recieves the same lables as all the other groups.  This could be narritively interesting because
+we would like to see how the character sees himself, and perhaps cause cognitive dissonence
+
+How is an occurence judged?
+- It depends on the role the actor plays in the the occurence.
+- he could be:
+	- a witness
+	- the subject of an action
+	- the performer of an action
+- A memory does two things:
+	- affect the mood of the actor
+	- affects his opinion of the other participants.
+- An outcome could result in the Actor placing a "Label" on another Actor.
+- We would still need a link to the memory, because we want to know what occurence was responsible for the label
+
+The question then becomes how do we describe these judgements?
+From a narrative perspective, drama occurs when we see an actor reveal what he wishes to protect or destroy in relation to others.
+What his order of priorities are.
+When a characters order of priorities are changed, this provides a narrative catharsis. 
+ So this means that the most important events we can create are ones where the order is revealed or changed.
+  
+ A newly met actor might be placed immediately under a preexisting label, or they might start off in a label that just includes
+ themselves, based on how stronly prejudiced the judge is.  As time progresses, the new actor will acumulate new labels himself.
+ This could cause a number of things to happen
+  - They might be moved to a new "Label"
+  - The "Label" they currently inhabit could be redefined
+  - A new "Label" might be created.
+
+ Setting up the occurence as a scene:
+ - An action / reaction structure : the gameworld changes somehow
+ - Relationship management.  Opinions, memories etc...
+ - A situation is encountered which requires a reaction or resolution
+ - The purpose of an event is to reveal additional detail of an actor to other actors, and for actors to make a decision based on their priorities, ideals, goals, etc.
+ 
+ - Every occurence has a list of participants, all of which are either acting or being acted upon
+
+ - In addition to prioritizing groups of people, an agent would also have prioritized lists of ideals they uphold or forsake.
+ - Could we link the groups and ideals that an agent upholds to the tags which are applied in response to occurences?
+ 

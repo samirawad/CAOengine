@@ -1,0 +1,91 @@
+﻿{
+  "Terms": {
+    "CombatingMonster": {
+      "TermFunction": "ObjectExists",
+      "Parameters": {
+        "PathToCheck": "Agents.Monster"
+      }
+    }
+  },
+  "Conditions": {
+
+  },
+  "Actions": {
+
+  },
+  "Outcomes": {
+    "PlayerAttacks": {
+      "ValidityCondition": "PlayerOnOffensive",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "AttackingMonster",
+        "Description": "The Player Attacks!"
+      }
+    },
+    "MonsterAttacks": {
+      "ValidityCondition": "MonsterOnOffensive",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "DefendingFromMonster",
+        "Description": "The Monster Attacks!"
+      }
+    },
+    "MonsterDodges": {
+      "ValidityCondition": "AttackingMonster",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "ResolveInitiative",
+        "Description": "The Monster dodges! The monster and player circle each other warily, looking for an opening to attack..."
+      }
+    },
+    "MonsterBlocks": {
+      "ValidityCondition": "AttackingMonster",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "AttackingMonster",
+        "Description": "The monster defends!  The Player presses his attack!"
+      }
+    },
+    "MonsterDies": {
+      "ValidityCondition": "AttackingMonster",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "MonsterDead",
+        "Description": "Monster dodges."
+      }
+    },
+    "ResolveInitiativeMonster": {
+      "ValidityCondition": "ResolveInitiative",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "DefendingFromMonster",
+        "Description": "Monster wins initiative!"
+      }
+    },
+    "ResolveInitiativePlayer": {
+      "ValidityCondition": "ResolveInitiative",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "DefendingFromMonster",
+        "Description": "Monster wins initiative!"
+      }
+    },
+
+    "ReturnToAdventuring": {
+      "ValidityCondition": "MonsterIsDefeated",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Adventuring",
+        "Description": "With combat complete, the party resumes it's travel"
+      }
+    }
+  }
+}

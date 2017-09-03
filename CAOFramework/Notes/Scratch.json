@@ -1,0 +1,8 @@
+﻿{
+  "Note": "When we combine selections, all we're doing is adding more keys and values to the selection dictionary.",
+  "Name": {
+    "S1": [ "item1", "item2" ],
+    "S2": [ "item1", "item3" ],
+    "s4": [ "item4", "item5" ]
+  }
+}

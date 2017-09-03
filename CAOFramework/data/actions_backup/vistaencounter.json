@@ -1,0 +1,28 @@
+﻿{
+  "Terms": {
+    "EncounteringVista": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "CurrentActivity",
+        "ValueToCheck": "Vista"
+      }
+    }
+  },
+  "Conditions": {
+
+  },
+  "Actions": {
+
+  },
+  "Outcomes": {
+    "AdmiresVista": {
+      "ValidityCondition": "EncounteringVista",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Adventuring",
+        "Description": "The vista is admired, then the party resumes its travels",
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+﻿{
+  "NPC": {
+    "Gender": "SelectGender",
+    "Name": "RandomName",
+    "Traits": "SimpleTraits",
+    "Tags": []
+  },
+  "SimpleTraits": {
+    "SubSelection": {
+      "min": 2,
+      "max": 5,
+      "selection": [
+        "Honesty_Humility",
+        "Emotionality",
+        "Extraversion",
+        "Agreeableness",
+        "Conscientiousness",
+        "Openness"
+      ]
+    }
+  },
+  "Honesty_Humility": {
+    "SelectOne": {
+      "selection": [
+        "Sympathetic",
+        "Selfish"
+      ]
+    }
+  },
+  "Emotionality": {
+    "SelectOne": {
+      "selection": [
+        "Emotional",
+        "Stoic"
+      ]
+    }
+  },
+  "Extraversion": {
+    "SelectOne": {
+      "selection": [
+        "Extraverted",
+        "Introverted"
+      ]
+    }
+  },
+  "Agreeableness": {
+    "SelectOne": {
+      "selection": [
+        "Agreeable",
+        "Disagreeable"
+      ]
+    }
+  },
+  "Conscientiousness": {
+    "SelectOne": {
+      "selection": [
+        "Conscientious",
+        "Non-Conscientious"
+      ]
+    }
+  },
+  "Openness": {
+    "SelectOne": {
+      "selection": [
+        "Open",
+        "Closed"
+      ]
+    }
+  }
+}

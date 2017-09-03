@@ -1,0 +1,37 @@
+﻿{
+  "Terms": {
+    "EncounteringMonster": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "CurrentActivity",
+        "ValueToCheck": "Monster"
+      }
+    }
+  },
+  "Conditions": {
+
+  },
+  "Actions": {
+
+  },
+  "Outcomes": {
+    "MonsterIsHostile": {
+      "ValidityCondition": "EncounteringMonster",
+      "OutcomeFunction": "CreateObject",
+      "Parameters": {
+        "Template": "Monster",
+        "Property": "Monsters",
+        "Description": "The monster is hostile!  The party enters combat!"
+      }
+    },
+    "MonsterRunsAway": {
+      "ValidityCondition": "EncounteringMonster",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Adventuring",
+        "Description": "The monster runs away! The party resumes travel."
+      }
+    }
+  }
+}

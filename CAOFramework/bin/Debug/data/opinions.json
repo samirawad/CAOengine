@@ -1,0 +1,102 @@
+{
+  "Name": "Envy",
+  "Actor": {
+    "Any": [
+      {
+        "Description": "My ambition makes me envious of those who display power",
+        "All": [
+          { "SelfAny": [ "Ambitious" ] },
+          { "Upholds": [ "Power" ] }
+        ]
+      },
+      {
+        "All": [
+          { "SelfAny": [ "Greedy" ] },
+          { "Upholds": [ "Greed" ] }
+        ]
+      },
+      {
+        "All": [
+          { "ActionAny": [ "brag" ] },
+          {
+            "Desctiption": "Somoneone {0} bragged to me.",
+            "ActorAny": [ "rich", "attractive" ]
+          },
+          { "TargetAny": [ "self" ] },
+          {
+            "Any": [
+              {
+                "Description": "I'm young, ugly and stupid",
+                "All": [
+                  { "SelfMaximumAge": 19 },
+                  { "SelfAll": [ "ugly", "stupid" ] }
+                ]
+              },
+              {
+                "Description": "I'm not rich, and I'm insecure or shy ",
+                "All": [
+                  { "SelfNone": [ "rich" ] },
+                  { "SelfAny": [ "insecure", "shy" ] }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "All": [
+          { "ActionAny": [ "flirt", "dance", "kiss" ] },
+          { "TargetAny": [ "partner", "attracted" ] }
+        ]
+      }
+    ]
+  },
+  "Target": {
+    "Any": [
+      {
+        "Description": "Envious of those who uphold pride or tenacity",
+        "Upholds": [ "Pride", "Tenacity" ]
+      },
+      {
+        "Description": "My greedy nature makes me envious of those who recieve gifts",
+        "All": [
+          {
+            "SelfAny": [ "Greedy" ]
+          },
+          {
+            "ActionAny": [ "gift" ]
+          }
+        ]
+      },
+      {
+        "Description": "My vain nature makes me envious of those who recieve amorous attention",
+        "All": [
+          { "SelfAny": "vain" },
+          { "ActionAny": [ "flirt" ] },
+          {
+            "Any": [
+              {
+                "All": [
+                  { "SelfAny": [ "male" ] },
+                  { "TargetAny": [ "male" ] }
+                ]
+              },
+              {
+                "All": [
+                  { "SelfAny": [ "female" ] },
+                  { "TargetAny": [ "female" ] }
+                ]
+              }
+            ]
+          },
+          {
+            "Any": [
+              { "ActorAny": [ "beautiful", "popular" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Self": {}
+}

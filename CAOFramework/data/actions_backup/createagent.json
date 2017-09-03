@@ -1,0 +1,38 @@
+﻿{
+  "Terms": {
+    "NameIsPlayer": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "Name",
+        "ValueToCheck": "Player"
+      }
+    },
+    "CreateAgentSelected": {
+      "TermFunction": "CheckSelectedAction",
+      "Parameters": {
+        "IsSelectedAction": "CreateAgent"
+      }
+    }
+  },
+  "Conditions": {
+
+  },
+  "Actions": {
+    "CreateAgent": {
+      "ValidityCondition": "NameIsPlayer",
+      "Description": "Create a new agent"
+    }
+  },
+  "Outcomes": {
+    "AgentCreated": {
+      "ValidityCondition": "CreateAgentSelected",
+      "OutcomeFunction": "CreateObject",
+      "Parameters": {
+        "Template": "Agent",
+        "Property": "Agents",
+        "Description": "generation complete",
+        "CompletesCurrentAction": "true"
+      }
+    }
+  }
+}

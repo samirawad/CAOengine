@@ -1,0 +1,28 @@
+﻿{
+  "Terms": {
+    "PlayerEncountersNPC": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "CurrentActivity",
+        "ValueToCheck": "NPC"
+      }
+    }
+  },
+  "Conditions": {
+
+  },
+  "Actions": {
+
+  },
+  "Outcomes": {
+    "EncountersNPC": {
+      "ValidityCondition": "PlayerEncountersNPC",
+      "OutcomeFunction": "SetProperty",
+      "Parameters": {
+        "PropertyToSet": "CurrentActivity",
+        "Value": "Adventuring",
+        "Description": "The party encounters an NPC.  Pleasantries are exchanged before the party resumes their travels",
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Name": "Player",
+  "CurrentActivity": "Training",
+  "Stats": {
+    "Str": 14,
+    "Con": 10,
+    "Dex": 10,
+    "Int": 14
+  }
+}

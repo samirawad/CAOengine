@@ -1,0 +1,2605 @@
+{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Eovanni",
+        "SurName": "Rarishali"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "brilliant",
+        "weak",
+        "gregarious",
+        "composed",
+        "tall"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Remayno",
+        "SurName": "Richarik"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Half-Elf"
+      ],
+      "Traits": [
+        "beautiful",
+        "disorganized",
+        "dim"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Hithanny",
+        "SurName": "Ylildrec"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Half-Orc"
+      ],
+      "Traits": [
+        "graceful",
+        "ambitious",
+        "distrustful"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Uliagra",
+        "SurName": "Ganagayd"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "unreflective",
+        "incurious",
+        "selfish",
+        "calm",
+        "bigoted"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Gerema",
+        "SurName": "Audelahi"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Animation"
+      ],
+      "Traits": [
+        "unadventurous",
+        "anxious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Tthews",
+        "SurName": "Arzaylee"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "distrustful",
+        "responsible",
+        "irreverant",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Narell",
+        "SurName": "Tereidavs"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "unreflective",
+        "brilliant"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Axstone",
+        "SurName": "Uraniyar"
+      },
+      "Profession": [
+        "Rogue"
+      ],
+      "Race": [
+        "Dragonkin"
+      ],
+      "Traits": [
+        "patriotic",
+        "dishonorable",
+        "warm",
+        "unassertive",
+        "cautious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Stianahil",
+        "SurName": "Evadylia"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "obstinate",
+        "cheerful",
+        "sympathetic"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Matheo",
+        "SurName": "Tikaryjaq"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "unimaginative",
+        "short",
+        "ambitious",
+        "cheerful"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Amanue",
+        "SurName": "Hniquell"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "warm",
+        "responsible",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ailynn",
+        "SurName": "Mmarrish"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Desert Human"
+      ],
+      "Traits": [
+        "warm",
+        "shy",
+        "ambitious",
+        "altruistic",
+        "wise"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Dyland",
+        "SurName": "Cedutgor"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "irresponsible",
+        "incurious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rlingt",
+        "SurName": "Enaleyde"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "hardy",
+        "beautiful",
+        "trusting"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Omonik",
+        "SurName": "Niquinon"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "foolish",
+        "irreverant",
+        "insecure",
+        "tense",
+        "frail"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Romana",
+        "SurName": "Ikayraea"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "thin",
+        "gregarious",
+        "unadventurous"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rigger",
+        "SurName": "Leahship"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "lighthearted",
+        "short",
+        "curious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Jahkye",
+        "SurName": "Valellan"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "curious",
+        "brilliant",
+        "cooperative",
+        "shy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Anayaat",
+        "SurName": "Yahmarri"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "beautiful",
+        "indifferent"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Innlea",
+        "SurName": "Ichlynne"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "obstinate",
+        "wise",
+        "short",
+        "reckless",
+        "realist"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+There are no valid events!{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Amanue",
+        "SurName": "Hniquell"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "warm",
+        "responsible",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ailynn",
+        "SurName": "Mmarrish"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Desert Human"
+      ],
+      "Traits": [
+        "warm",
+        "shy",
+        "ambitious",
+        "altruistic",
+        "wise"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Dyland",
+        "SurName": "Cedutgor"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "irresponsible",
+        "incurious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rlingt",
+        "SurName": "Enaleyde"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "hardy",
+        "beautiful",
+        "trusting"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Omonik",
+        "SurName": "Niquinon"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "foolish",
+        "irreverant",
+        "insecure",
+        "tense",
+        "frail"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Romana",
+        "SurName": "Ikayraea"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "thin",
+        "gregarious",
+        "unadventurous"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rigger",
+        "SurName": "Leahship"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "lighthearted",
+        "short",
+        "curious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Jahkye",
+        "SurName": "Valellan"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "curious",
+        "brilliant",
+        "cooperative",
+        "shy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Anayaat",
+        "SurName": "Yahmarri"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "beautiful",
+        "indifferent"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Innlea",
+        "SurName": "Ichlynne"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "obstinate",
+        "wise",
+        "short",
+        "reckless",
+        "realist"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Amanue",
+        "SurName": "Hniquell"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "warm",
+        "responsible",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ailynn",
+        "SurName": "Mmarrish"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Desert Human"
+      ],
+      "Traits": [
+        "warm",
+        "shy",
+        "ambitious",
+        "altruistic",
+        "wise"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Dyland",
+        "SurName": "Cedutgor"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "irresponsible",
+        "incurious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rlingt",
+        "SurName": "Enaleyde"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "hardy",
+        "beautiful",
+        "trusting"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[3]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        },
+        {
+          "relationPath": "NPCs[8]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Omonik",
+        "SurName": "Niquinon"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "foolish",
+        "irreverant",
+        "insecure",
+        "tense",
+        "frail"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Romana",
+        "SurName": "Ikayraea"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "thin",
+        "gregarious",
+        "unadventurous"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rigger",
+        "SurName": "Leahship"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "lighthearted",
+        "short",
+        "curious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Jahkye",
+        "SurName": "Valellan"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "curious",
+        "brilliant",
+        "cooperative",
+        "shy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Anayaat",
+        "SurName": "Yahmarri"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "beautiful",
+        "indifferent"
+      ],
+      "Tags": [
+        "Complimented"
+      ],
+      "Relations": [
+        {
+          "relationPath": "NPCs[3]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        },
+        {
+          "relationPath": "NPCs[8]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Innlea",
+        "SurName": "Ichlynne"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "obstinate",
+        "wise",
+        "short",
+        "reckless",
+        "realist"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[3]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        },
+        {
+          "relationPath": "NPCs[8]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9"
+          ]
+        }
+      ]
+    }
+  ]
+}{
+  "8f0ed15c-68b5-4498-afb8-d8cd1aa774b9": {
+    "OutcomeType": null,
+    "Description": "A flirt occured with witnesses",
+    "Roles": [
+      {
+        "RolePath": "NPCs[3]",
+        "RoleDetails": {
+          "Description": "<Speaker.Name> chatted to <ChatTarget.Name>",
+          "Action": {
+            "Actions": [
+              "Spoke"
+            ],
+            "Targets": [
+              "ChatTarget"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[8]",
+        "RoleDetails": {
+          "Description": "Was chatted to by a guy",
+          "Action": {
+            "Actors": [
+              "ChatTarget"
+            ],
+            "Actions": [
+              "Listened"
+            ],
+            "Targets": [
+              "Speaker"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[9]",
+        "RoleDetails": {
+          "Description": "Saw a conversation",
+          "Action": {
+            "Actions": [
+              "Witnessed",
+              "Conversation"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}The target was chatted up.A flirt occured with witnesses
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Frankly",
+        "SurName": "Tayvelamo"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Animation"
+      ],
+      "Traits": [
+        "hardy",
+        "reflective",
+        "strong",
+        "cultured",
+        "indifferent"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Riellen",
+        "SurName": "Thanieli"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "untraditional",
+        "obstinate",
+        "cheerful",
+        "warm",
+        "foolish"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Vihana",
+        "SurName": "Denvioni"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Dark Elf"
+      ],
+      "Traits": [
+        "cautious",
+        "brilliant"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Abriel",
+        "SurName": "Azahavit"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Dark Elf"
+      ],
+      "Traits": [
+        "hesitant",
+        "frail",
+        "ugly"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Iralino",
+        "SurName": "Cushtynn"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "cooperative",
+        "modest",
+        "tense"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Eleenah",
+        "SurName": "Ancemere"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "boastful",
+        "reckless"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Liveah",
+        "SurName": "Roseleann"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "wise",
+        "melancholy",
+        "patriotic",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Esario",
+        "SurName": "Luwaylesad"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "fat",
+        "insecure",
+        "unassertive",
+        "weak"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Brinkan",
+        "SurName": "Irahnesa"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "distrustful",
+        "reflective"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Leonidad",
+        "SurName": "Khyriose"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "High Elf"
+      ],
+      "Traits": [
+        "patriotic",
+        "irresponsible",
+        "sincere",
+        "anxious"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Frankly",
+        "SurName": "Tayvelamo"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Animation"
+      ],
+      "Traits": [
+        "hardy",
+        "reflective",
+        "strong",
+        "cultured",
+        "indifferent"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Riellen",
+        "SurName": "Thanieli"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "untraditional",
+        "obstinate",
+        "cheerful",
+        "warm",
+        "foolish"
+      ],
+      "Tags": [
+        "Complimented"
+      ],
+      "Relations": [
+        {
+          "relationPath": "NPCs[7]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[1]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[4]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[5]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[2]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Vihana",
+        "SurName": "Denvioni"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Dark Elf"
+      ],
+      "Traits": [
+        "cautious",
+        "brilliant"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[7]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[1]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[4]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[5]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[2]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Abriel",
+        "SurName": "Azahavit"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Dark Elf"
+      ],
+      "Traits": [
+        "hesitant",
+        "frail",
+        "ugly"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Iralino",
+        "SurName": "Cushtynn"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "cooperative",
+        "modest",
+        "tense"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[7]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[1]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[4]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[5]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[2]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Eleenah",
+        "SurName": "Ancemere"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "boastful",
+        "reckless"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[7]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[1]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[4]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[5]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[2]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Liveah",
+        "SurName": "Roseleann"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Birdkin"
+      ],
+      "Traits": [
+        "wise",
+        "melancholy",
+        "patriotic",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Esario",
+        "SurName": "Luwaylesad"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "fat",
+        "insecure",
+        "unassertive",
+        "weak"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[7]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[1]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[4]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[5]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[2]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        }
+      ]
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Brinkan",
+        "SurName": "Irahnesa"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "distrustful",
+        "reflective"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Leonidad",
+        "SurName": "Khyriose"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "High Elf"
+      ],
+      "Traits": [
+        "patriotic",
+        "irresponsible",
+        "sincere",
+        "anxious"
+      ],
+      "Tags": [],
+      "Relations": [
+        {
+          "relationPath": "NPCs[7]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[1]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[4]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[9]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[5]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        },
+        {
+          "relationPath": "NPCs[2]",
+          "Memories": [
+            "cff54cb0-9561-44e4-9c14-4bd67fa71050"
+          ]
+        }
+      ]
+    }
+  ]
+}{
+  "cff54cb0-9561-44e4-9c14-4bd67fa71050": {
+    "OutcomeType": null,
+    "Description": "A flirt occured with witnesses",
+    "Roles": [
+      {
+        "RolePath": "NPCs[7]",
+        "RoleDetails": {
+          "Description": "<Speaker.Name> chatted to <ChatTarget.Name>",
+          "Action": {
+            "Actions": [
+              "Spoke"
+            ],
+            "Targets": [
+              "ChatTarget"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[1]",
+        "RoleDetails": {
+          "Description": "Was chatted to by a guy",
+          "Action": {
+            "Actors": [
+              "ChatTarget"
+            ],
+            "Actions": [
+              "Listened"
+            ],
+            "Targets": [
+              "Speaker"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[4]",
+        "RoleDetails": {
+          "Description": "Saw a conversation",
+          "Action": {
+            "Actions": [
+              "Witnessed",
+              "Conversation"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[9]",
+        "RoleDetails": {
+          "Description": "Saw a conversation",
+          "Action": {
+            "Actions": [
+              "Witnessed",
+              "Conversation"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[5]",
+        "RoleDetails": {
+          "Description": "Saw a conversation",
+          "Action": {
+            "Actions": [
+              "Witnessed",
+              "Conversation"
+            ]
+          }
+        }
+      },
+      {
+        "RolePath": "NPCs[2]",
+        "RoleDetails": {
+          "Description": "Saw a conversation",
+          "Action": {
+            "Actions": [
+              "Witnessed",
+              "Conversation"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}The target was chatted up.A flirt occured with witnesses
+There are no valid events!{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Iettellaa",
+        "SurName": "Kiontero"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Half-Dwarf"
+      ],
+      "Traits": [
+        "unassertive",
+        "beautiful",
+        "optimistic",
+        "cheerful"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Frandyr",
+        "SurName": "Antleicto"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "cheerful",
+        "traditional",
+        "responsible",
+        "unadventurous",
+        "hardy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Ubreylyn",
+        "SurName": "Isyrralo"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "High Elf"
+      ],
+      "Traits": [
+        "shy",
+        "dim",
+        "unimaginative",
+        "obstinate"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Lhenad",
+        "SurName": "Cheniyano"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Dragonkin"
+      ],
+      "Traits": [
+        "unreflective",
+        "modest"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Hattab",
+        "SurName": "Niyadhynn"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Desert Human"
+      ],
+      "Traits": [
+        "distrustful",
+        "uncultured"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Viannah",
+        "SurName": "Acereyle"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "unassertive",
+        "boastful"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Khushi",
+        "SurName": "Ksharlol"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Dark Elf"
+      ],
+      "Traits": [
+        "tempermental",
+        "obstinate"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Brylin",
+        "SurName": "Inikeeko"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "dim",
+        "religious",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Amiyra",
+        "SurName": "Jayeelai"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "disorganized",
+        "sincere",
+        "imaginative",
+        "undisciplined"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Surayah",
+        "SurName": "Reanicksi"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "untraditional",
+        "cautious"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Aprees",
+        "SurName": "Lmaxtepase"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "cautious",
+        "confident",
+        "graceful",
+        "insecure"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Atarzy",
+        "SurName": "Helliert"
+      },
+      "Profession": [
+        "Rogue"
+      ],
+      "Race": [
+        "Hill Dwarf"
+      ],
+      "Traits": [
+        "tense",
+        "irreverant",
+        "responsible",
+        "undisciplined",
+        "unassertive"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Llianna",
+        "SurName": "Icezmona"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Hill Dwarf"
+      ],
+      "Traits": [
+        "unambitious",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Riyahana",
+        "SurName": "Hlahzade"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Hill Dwarf"
+      ],
+      "Traits": [
+        "irreverant",
+        "insecure"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Reyannahi",
+        "SurName": "Eaniyuli"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Catkin"
+      ],
+      "Traits": [
+        "incurious",
+        "lighthearted"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Aybreez",
+        "SurName": "Styahloxf"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Half-Elf"
+      ],
+      "Traits": [
+        "beautiful",
+        "unambitious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Tanfordh",
+        "SurName": "Ngeamali"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "grim",
+        "strong-willed",
+        "curious",
+        "confident"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Lunette",
+        "SurName": "Bleimiry"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "hardy",
+        "anxious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Alysan",
+        "SurName": "Eiorinay"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "disorganized",
+        "fat",
+        "shy",
+        "responsible"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Khayri",
+        "SurName": "Nnavannes"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Western Human"
+      ],
+      "Traits": [
+        "strong",
+        "adventurous",
+        "hesitant",
+        "tall",
+        "self-assured"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Datham",
+        "SurName": "Rklences"
+      },
+      "Profession": [
+        "Rogue"
+      ],
+      "Race": [
+        "Half-Dwarf"
+      ],
+      "Traits": [
+        "composed",
+        "disciplined",
+        "bigoted",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Silynnan",
+        "SurName": "Eckaylish"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Eastern Human"
+      ],
+      "Traits": [
+        "cooperative",
+        "curious",
+        "deceptive",
+        "dim"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Keatan",
+        "SurName": "Leveeshy"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "adventurous",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Tavius",
+        "SurName": "Eassenanaj"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Desert Human"
+      ],
+      "Traits": [
+        "assertive",
+        "accepting",
+        "weak-willed",
+        "gregarious",
+        "graceful"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Jannel",
+        "SurName": "Ingtonna"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "High Elf"
+      ],
+      "Traits": [
+        "weak-willed",
+        "selfish"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Sanderso",
+        "SurName": "Iyavezarm"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "frail",
+        "untraditional",
+        "distrustful",
+        "cautious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Omaisie",
+        "SurName": "Brisleya"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "ugly",
+        "curious",
+        "reflective"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Andoni",
+        "SurName": "Illastayl"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "philosophical",
+        "cooperative"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Radley",
+        "SurName": "Sonwynnyc"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "distrustful",
+        "boastful",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Aryamanit",
+        "SurName": "Tathmith"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Half-Orc"
+      ],
+      "Traits": [
+        "cautious",
+        "fat"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+There are no valid events!{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Morett",
+        "SurName": "Enattinny"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Forest Elf"
+      ],
+      "Traits": [
+        "brilliant",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Arihar",
+        "SurName": "Hriancel"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "traditional",
+        "disorganized",
+        "accepting",
+        "imaginative"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Damiya",
+        "SurName": "Iahivron"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "passive",
+        "rude",
+        "lighthearted"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Kayliee",
+        "SurName": "Nedsonnas"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "calm",
+        "beautiful",
+        "self-assured"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Leyton",
+        "SurName": "Davynlee"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "shy",
+        "modest",
+        "philosophical",
+        "irresponsible"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Derrian",
+        "SurName": "Ngdamika"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Clockwork"
+      ],
+      "Traits": [
+        "adventurous",
+        "bigoted",
+        "distrustful",
+        "clumsy",
+        "imaginative"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Styannell",
+        "SurName": "Sietretrin"
+      },
+      "Profession": [
+        "Bard"
+      ],
+      "Race": [
+        "Mountain Dwarf"
+      ],
+      "Traits": [
+        "religious",
+        "unimaginative"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Rihith",
+        "SurName": "Aylocill"
+      },
+      "Profession": [
+        "Necromancer"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "accepting",
+        "rude"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Anellas",
+        "SurName": "Airondson"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "philosophical",
+        "curious"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Hournee",
+        "SurName": "Davrusti"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "High Elf"
+      ],
+      "Traits": [
+        "confident",
+        "dishonorable"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.Opinions loadedOpinions loadedOpinions loadedOpinions loadedOpinions loadedOpinions loadedOpinions loadedOpinions loadedAny must be true:Opinions loadedAny must be true:{
+  "Reason": "My ambition makes me envious of those who display power",
+  "All": [
+    {
+      "SelfAny": [
+        "Ambitious"
+      ]
+    },
+    {
+      "Upholds": [
+        "Power"
+      ]
+    }
+  ]
+}Opinions loaded

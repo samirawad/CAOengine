@@ -1,0 +1,22 @@
+﻿{
+  "Terms": {
+
+  },
+  "Conditions": {
+
+  },
+  "Actions": {
+
+  },
+  "Outcomes": {
+    "outcome1": {
+      "Parent": "parent outcome",
+      "ValidityCondition": "Name of validity condition. If present, must resolve to true",
+      "OutcomeFunction": "Name of the outcome function",
+      "Parameters": {
+        "Description": "outcome description"
+      }
+    }
+    
+  }
+}

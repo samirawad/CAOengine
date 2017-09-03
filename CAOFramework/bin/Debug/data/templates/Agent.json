@@ -1,0 +1,522 @@
+﻿{
+  "Agent": {
+    "Gender": "SelectGender",
+    "Name": "RandomName",
+    "Profession": "SelectProfession",
+    "Race": "SelectRace",
+    "Traits": "SelectTraits",
+    "Tags": []
+  },
+  "SelectGender": {
+    "SelectOne": {
+      "selection": [ "male", "female" ]
+    }
+  },
+  "RandomName": {
+    "GivenName": {
+      "SwitchOnValues": {
+        "switches": [
+          {
+            "path": "Gender",
+            "value": "male",
+            "return": "MaleFirstNameGenerator"
+          },
+          {
+            "path": "Gender",
+            "value": "female",
+            "return": "FemaleFirstNameGenerator"
+          }
+        ]
+      }
+    },
+    "SurName": "LastNameGenerator"
+  },
+  "MaleFirstNameGenerator": {
+    "MarkovStr": {
+      "order": 4,
+      "minlength": 6,
+      "datafile": "male.txt"
+    }
+  },
+  "FemaleFirstNameGenerator": {
+    "MarkovStr": {
+      "order": 4,
+      "minlength": 6,
+      "datafile": "female.txt"
+    }
+  },
+  "LastNameGenerator": {
+    "MarkovStr": {
+      "order": 2,
+      "minlength": 8,
+      "datafile": "allnames.txt"
+    }
+  },
+  "SelectRace": {
+    "SubSelection": {
+      "min": 1,
+      "max": 1,
+      "selection": [
+        "Human",
+        "Elf",
+        "Dwarf",
+        "Halfling",
+        "Orc",
+        "Beast",
+        "Construct"
+      ]
+    }
+  },
+  "Construct": {
+    "SelectOne": {
+      "selection": [
+        "Golem",
+        "Clockwork",
+        "Animation"
+      ]
+    }
+  },
+  "Orc": {
+    "SelectOne": {
+      "selection": [
+        "Orc",
+        "Troll",
+        "Goblin"
+      ]
+    }
+  },
+  "Human": {
+    "SelectOne": {
+      "selection": [
+        "Desert Human",
+        "Western Human",
+        "Eastern Human",
+        "Half-Elf",
+        "Half-Orc",
+        "Half-Dwarf"
+      ]
+    }
+  },
+  "Elf": {
+    "SelectOne": {
+      "selection": [
+        "High Elf",
+        "Forest Elf",
+        "Dark Elf"
+      ]
+    }
+  },
+  "Dwarf": {
+    "SelectOne": {
+      "selection": [
+        "Mountain Dwarf",
+        "Hill Dwarf"
+      ]
+    }
+  },
+  "Beast": {
+    "SelectOne": {
+      "selection": [
+        "Catkin",
+        "Dogkin",
+        "Dragonkin",
+        "Birdkin"
+      ]
+    }
+  },
+  "SelectProfession": {
+    "SubSelection": {
+      "min": 1,
+      "max": 1,
+      "selection": [
+        "Barbarian",
+        "Paladin",
+        "Mercenary",
+        "Rogue",
+        "Bard",
+        "Ranger",
+        "Monk",
+        "Cleric",
+        "Mage",
+        "Necromancer"
+      ]
+    }
+  },
+  "SelectTraits": {
+    "SubSelection": {
+      "min": 2,
+      "max": 5,
+      "selection": [
+        "warmth",
+        "gregariousness",
+        "assertiveness",
+        "adventureousness",
+        "cheerfulness",
+        "trust",
+        "sincerity",
+        "altruism",
+        "cooperation",
+        "modesty",
+        "sympathy",
+        "confidence",
+        "orderly",
+        "responsibility",
+        "ambition",
+        "discipline",
+        "caution",
+        "optimism",
+        "temper",
+        "mood",
+        "security",
+        "willpower",
+        "composure",
+        "imagination",
+        "culture",
+        "reflection",
+        "curiosity",
+        "philosphical",
+        "bigotry",
+        "tradition",
+        "religiousness",
+        "patriotism",
+        "honor",
+        "beauty",
+        "height",
+        "strength",
+        "intelligence",
+        "wisdom",
+        "grace",
+        "endurance",
+        "bodyshape"
+      ]
+    }
+  },
+  "warmth": {
+    "SelectOne": {
+      "selection": [
+        "warm",
+        "cold"
+      ]
+    }
+  },
+  "gregariousness": {
+    "SelectOne": {
+      "selection": [
+        "gregarious",
+        "shy"
+      ]
+    }
+  },
+  "assertiveness": {
+    "SelectOne": {
+      "selection": [
+        "assertive",
+        "passive"
+      ]
+    }
+  },
+  "adventureousness": {
+    "SelectOne": {
+      "selection": [
+        "adventurous",
+        "content"
+      ]
+    }
+  },
+  "cheerfulness": {
+    "SelectOne": {
+      "selection": [
+        "cheerful",
+        "grim"
+      ]
+    }
+  },
+  "trust": {
+    "SelectOne": {
+      "selection": [
+        "trusting",
+        "distrustful"
+      ]
+    }
+  },
+  "sincerity": {
+    "SelectOne": {
+      "selection": [
+        "sincere",
+        "deceptive"
+      ]
+    }
+  },
+  "altruism": {
+    "SelectOne": {
+      "selection": [
+        "altruistic",
+        "selfish"
+      ]
+    }
+  },
+  "cooperation": {
+    "SelectOne": {
+      "selection": [
+        "cooperative",
+        "obstinate"
+      ]
+    }
+  },
+  "modesty": {
+    "SelectOne": {
+      "selection": [
+        "modest",
+        "boastful"
+      ]
+    }
+  },
+  "sympathy": {
+    "SelectOne": {
+      "selection": [
+        "sympathetic",
+        "indifferent"
+      ]
+    }
+  },
+  "confidence": {
+    "SelectOne": {
+      "selection": [
+        "confident",
+        "nervous"
+      ]
+    }
+  },
+  "orderly": {
+    "SelectOne": {
+      "selection": [
+        "orderly",
+        "disorganized"
+      ]
+    }
+  },
+  "responsibility": {
+    "SelectOne": {
+      "selection": [
+        "responsible",
+        "irresponsible"
+      ]
+    }
+  },
+  "ambition": {
+    "SelectOne": {
+      "selection": [
+        "ambitious",
+        "unambitious"
+      ]
+    }
+  },
+  "discipline": {
+    "SelectOne": {
+      "selection": [
+        "disciplined",
+        "undisciplined"
+      ]
+    }
+  },
+  "caution": {
+    "SelectOne": {
+      "selection": [
+        "reckless",
+        "cautious"
+      ]
+    }
+  },
+  "optimism": {
+    "SelectOne": {
+      "selection": [
+        "optimistic",
+        "pessimistic"
+      ]
+    }
+  },
+  "temper": {
+    "SelectOne": {
+      "selection": [
+        "calm",
+        "tempermental"
+      ]
+    }
+  },
+  "mood": {
+    "SelectOne": {
+      "selection": [
+        "lighthearted",
+        "melancholy"
+      ]
+    }
+  },
+  "security": {
+    "SelectOne": {
+      "selection": [
+        "self-assured",
+        "insecure"
+      ]
+    }
+  },
+  "willpower": {
+    "SelectOne": {
+      "selection": [
+        "strong-willed",
+        "weak-willed"
+      ]
+    }
+  },
+  "composure": {
+    "SelectOne": {
+      "selection": [
+        "composed",
+        "tense"
+      ]
+    }
+  },
+  "imagination": {
+    "SelectOne": {
+      "selection": [
+        "imaginative",
+        "unimaginative"
+      ]
+    }
+  },
+  "culture": {
+    "SelectOne": {
+      "selection": [
+        "polite",
+        "rude"
+      ]
+    }
+  },
+  "reflection": {
+    "SelectOne": {
+      "selection": [
+        "reflective",
+        "unreflective"
+      ]
+    }
+  },
+  "curiosity": {
+    "SelectOne": {
+      "selection": [
+        "curious",
+        "incurious"
+      ]
+    }
+  },
+  "philosphical": {
+    "SelectOne": {
+      "selection": [
+        "philosophical",
+        "realist"
+      ]
+    }
+  },
+  "bigotry": {
+    "SelectOne": {
+      "selection": [
+        "accepting",
+        "bigoted"
+      ]
+    }
+  },
+  "tradition": {
+    "SelectOne": {
+      "selection": [
+        "untraditional",
+        "traditional"
+      ]
+    }
+  },
+  "religiousness": {
+    "SelectOne": {
+      "selection": [
+        "irreverant",
+        "religious"
+      ]
+    }
+  },
+  "patriotism": {
+    "SelectOne": {
+      "selection": [
+        "rebellious",
+        "patriotic"
+      ]
+    }
+  },
+  "honor": {
+    "SelectOne": {
+      "selection": [
+        "honorable",
+        "dishonorable"
+      ]
+    }
+  },
+  "beauty": {
+    "SelectOne": {
+      "selection": [
+        "beautiful",
+        "ugly"
+      ]
+    }
+  },
+  "height": {
+    "SelectOne": {
+      "selection": [
+        "tall",
+        "short"
+      ]
+    }
+  },
+  "strength": {
+    "SelectOne": {
+      "selection": [
+        "strong",
+        "weak"
+      ]
+    }
+  },
+  "intelligence": {
+    "SelectOne": {
+      "selection": [
+        "brilliant",
+        "dim"
+      ]
+    }
+  },
+  "wisdom": {
+    "SelectOne": {
+      "selection": [
+        "wise",
+        "foolish"
+      ]
+    }
+  },
+  "grace": {
+    "SelectOne": {
+      "selection": [
+        "graceful",
+        "clumsy"
+      ]
+    }
+  },
+  "endurance": {
+    "SelectOne": {
+      "selection": [
+        "hardy",
+        "frail"
+      ]
+    }
+  },
+  "bodyshape": {
+    "SelectOne": {
+      "selection": [
+        "thin",
+        "fat"
+      ]
+    }
+  }
+}

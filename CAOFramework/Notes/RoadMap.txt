@@ -1,0 +1,24 @@
+﻿
+- Libraries should go into separate files. We might need something like namespaces?
+	- data should be split into separate directories.
+	- Just templates and Action directories for now
+- Need to port memory and judgement framework from other project.
+	- We can save the details of an occurence.
+	- How do we map an occurance into a memory for an agent and an opinion of the other agents?
+- Need a saving and loading mechanism
+	- We can just serialize the worlddoc object 
+- Deeply branching events.
+- Even though we can chain outcomes together by conditions, we should be able to run multiple outcomes in succession.
+- Need the concept of a parentoutcome....
+  - did an implementation of parentoutcomte, but in order to create branches with loops, I have to be able to set the outcome.  
+
+- Perhaps parentstage could be an array, so that an outcome would be valid if either of the parents were true.
+- We want to pass in jtokens into to the create object function so we can specify custom values for created objects
+- We could use created objects as 'signals' or working parameters for outcomes further down the line.  We create an object to work with then set the stage
+for the next outcome to work on it?
+   
+- The handling of outcomes has to be a collection of functions.  For each role, we perform the function, then apply the relational updates and history creation.
+- parent stages need to be an array because more than one parent stage might be valid
+
+- A term lets you know if something is true about a selection. Returns true or false
+- A selection returns a set based on a term
