@@ -26,9 +26,10 @@ namespace ConditionFramework
             string basedir = AppDomain.CurrentDomain.BaseDirectory + @"\data\";
 
             Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(basedir + "opinions.json"));
-            //JudgementCondition.JudgementIsValid(judgement.Actor, null, null, null);
-            log("Opinions loaded");
-            
+            log("Judgements loaded");
+
+            string judgementDesc = "";
+            bool valid = JudgementCondition.JudgementIsValid(ref judgementDesc, judgement.HowToJudgeActor, null, null, null);
             Console.ReadKey(true);
         }
 

@@ -22,3 +22,11 @@ C:\Users\sawad\Downloads\CAOFramework\CAOFramework\CAOFramework\bin\Debug\CAOFra
 C:\Users\sawad\Downloads\CAOFramework\CAOFramework\CAOFramework\bin\Debug\Newtonsoft.Json.dll
 C:\Users\sawad\Downloads\CAOFramework\CAOFramework\CAOFramework\bin\Debug\Newtonsoft.Json.xml
 C:\Users\sawad\Downloads\CAOFramework\CAOFramework\CAOFramework\obj\Debug\CAOFramework.csprojResolveAssemblyReference.cache
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOFramework.exe.config
+C:\Users\Samir\Documents\CAOengine\CAOFramework\obj\Debug\CAOFramework.exe
+C:\Users\Samir\Documents\CAOengine\CAOFramework\obj\Debug\CAOFramework.pdb
+C:\Users\Samir\Documents\CAOengine\CAOFramework\obj\Debug\CAOFramework.csprojResolveAssemblyReference.cache
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOFramework.exe
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOFramework.pdb
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\Newtonsoft.Json.xml

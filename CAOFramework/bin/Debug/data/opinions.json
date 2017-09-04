@@ -1,12 +1,23 @@
 {
-  "Name": "Envy",
-  "Actor": {
+  "JudgementTag": "Envy",
+  "HowToJudgeActor": {
     "Any": [
       {
-        "Description": "My ambition makes me envious of those who display power",
         "All": [
           { "SelfAny": [ "Ambitious" ] },
-          { "Upholds": [ "Power" ] }
+          {
+            "Any": [
+              { "ActorUpholds": [ "Power" ] },
+              {
+                "All": [
+                  { "SelfAll": [ "Kind","Cowardly" ] },
+                  { "ActionAny": [ "Confront" ] },
+                  { "TargetUpholds": [ "Cruelty" ] },
+                  { "TargetAny": [ "Powerful", "Rich" ] }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
@@ -19,7 +30,7 @@
         "All": [
           { "ActionAny": [ "brag" ] },
           {
-            "Desctiption": "Somoneone {0} bragged to me.",
+            "Description": "Somoneone {0} bragged to me.",
             "ActorAny": [ "rich", "attractive" ]
           },
           { "TargetAny": [ "self" ] },
@@ -51,11 +62,18 @@
       }
     ]
   },
-  "Target": {
+  "HowToJudgeTarget": {
     "Any": [
       {
         "Description": "Envious of those who uphold pride or tenacity",
-        "Upholds": [ "Pride", "Tenacity" ]
+        "TargetUpholds": [ "Pride", "Tenacity" ]
+      },
+      {
+        "Description": "Envious of those who display patience in the face of bullying",
+        "All": [
+          { "ActionAny": [ "Bullying" ] },
+          { "ActorUpholds": [ "Patience" ] }
+        ]
       },
       {
         "Description": "My greedy nature makes me envious of those who recieve gifts",
@@ -98,5 +116,5 @@
       }
     ]
   },
-  "Self": {}
+  "HowToJudgeSelf": {}
 }
