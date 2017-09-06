@@ -29,7 +29,7 @@ namespace ConditionFramework
             log("Judgements loaded");
 
             string judgementDesc = "";
-            bool valid = JudgementCondition.JudgementIsValid(ref judgementDesc, judgement.HowToJudgeActor, null, null, null);
+            //bool valid = judgement.JudgementIsValid(ref judgementDesc, judgement.HowToJudgeActor, null, null, null);
             Console.ReadKey(true);
         }
 

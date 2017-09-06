@@ -1,6 +1,6 @@
 {
   "JudgementTag": "Envy",
-  "HowToJudgeActor": {
+  "ActorJudgement": {
     "Any": [
       {
         "All": [
@@ -62,7 +62,7 @@
       }
     ]
   },
-  "HowToJudgeTarget": {
+  "TargetJudgement": {
     "Any": [
       {
         "Description": "Envious of those who uphold pride or tenacity",
@@ -116,5 +116,5 @@
       }
     ]
   },
-  "HowToJudgeSelf": {}
+  "SelfJudgement": {}
 }
