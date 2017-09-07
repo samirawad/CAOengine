@@ -59,44 +59,6 @@ namespace ConditionFramework
             return result;
         }
 
-        //private static void UpdateRelations(JObject target, List<OccurrenceRole> participants, string memoryID)
-        //{
-        //    // A relation consists of path to another entity, under which is a collection of memory ids is kept.
-        //    // It is meant to represent a collection of occurences that this entity (target) shares with all
-        //    // participants in the occurence
-        //    if (target?["Relations"] == null)
-        //    {
-        //        target.Add("Relations", new JArray());
-        //    }
-
-        //    // Each participant needs to update the relations of all the participants in the memory
-        //    // A relation is a collection of memories under an entity
-        //    foreach (OccurrenceRole currentRole in participants)
-        //    {
-        //        bool relationupdated = false;
-        //        // Find the relation under the relations collection of this entity.
-        //        foreach (JObject relation in target["Relations"].Children())
-        //        {
-        //            // We've found the relation, update it with the new memory by adding the id.
-        //            //if (((string)relation["relationPath"]) == currentRole.RolePath)
-        //            //{
-        //            //    ((JArray)relation["Memories"]).Add(memoryID);
-        //            //    relationupdated = true;
-        //            //}
-        //        }
-        //        if (!relationupdated)
-        //        {
-        //            // This is a new relation, add it to the relations collection of this participant
-        //            JObject newRelation = new JObject();
-        //            //newRelation.Add("relationPath", currentRole.RolePath);
-        //            newRelation.Add("Memories", new JArray());
-        //            ((JArray)newRelation["Memories"]).Add(memoryID);
-        //            ((JArray)target["Relations"]).Add(newRelation);
-        //        }
-        //    }
-        //}
-
-
         public string PerformOutcomes(ref World world)
         {
             // Collect the selections for the outcome, and pass them to the functions

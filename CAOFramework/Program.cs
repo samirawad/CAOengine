@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace ConditionFramework
 {
@@ -18,20 +16,9 @@ namespace ConditionFramework
 
         public static void Main(string[] args)
         {
-            Test();
+            Run();
         }
 
-        public static void Test()
-        {
-            string basedir = AppDomain.CurrentDomain.BaseDirectory + @"\data\";
-
-            Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(basedir + "opinions.json"));
-            log("Judgements loaded");
-
-            string judgementDesc = "";
-            //bool valid = judgement.JudgementIsValid(ref judgementDesc, judgement.HowToJudgeActor, null, null, null);
-            Console.ReadKey(true);
-        }
 
         public static void Run()
         {

@@ -18,15 +18,18 @@ namespace ConditionFramework
         public JObject SelfJudgement;  // The conditions under which the Witness in an Occurence will have this Opinion applied to them.
 
         // Judge the occurence from the perspective of the witness actor
-        public Actor FormJudgement(Actor Judge, Actor Subject, Occurrence occurence)
+        public Actor FormJudgement(Actor Judge, Occurrence occurence, World World)
         {
-            Relationship currentRelationship = Judge.Relationships.FirstOrDefault(r => { return r.Actor == Subject.Name; });
+            // Judge the Actor
+            Actor subject = null;
+
+            Relationship currentRelationship = Judge.Relationships.FirstOrDefault(r => { return r.Actor == subject.Name; });
             // If the current relationship doesn't exist, this occurence we begin a new one
             if(currentRelationship == null)
             {
                 currentRelationship = new Relationship()
                 {
-                    Actor = Subject.Name,
+                    Actor = subject.Name,
                     Opinions = new List<Opinion>()
                 };
             }

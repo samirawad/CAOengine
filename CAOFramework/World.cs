@@ -43,7 +43,9 @@ namespace ConditionFramework
 
         public JObject Templates;
 
-        public JObject WorldDoc;
+        public JObject WorldDoc; // Stores all game state that isn't stored on actors
+
+        public List<Actor> Actors; // All actors in the world.
 
         public Dictionary<string, Occurrence> History = new Dictionary<string, Occurrence>();
 
