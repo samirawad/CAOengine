@@ -1,27 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace ConditionFramework
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Dynamic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Newtonsoft.Json.Linq;
-    using Newtonsoft.Json;
-    using System.IO;
-
-    // Relationships between objects are stored using this struct.  Querying and altering these relationships
-    // is one of the main implementations of game state.
-
-
-    // Behold, the smallest game engine evah
+    // Behold, the smallest game engine evah... hmm not so small now?
     public class World
     {
         private char[] Alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
@@ -46,6 +32,8 @@ namespace ConditionFramework
         public JObject WorldDoc; // Stores all game state that isn't stored on actors
 
         public List<Actor> Actors; // All actors in the world.
+
+        public List<Judgement> Judgements; // Library of functions which control how judgements are made
 
         public Dictionary<string, Occurrence> History = new Dictionary<string, Occurrence>();
 

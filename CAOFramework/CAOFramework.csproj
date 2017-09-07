@@ -53,7 +53,6 @@
     <Compile Include="Filter.cs" />
     <Compile Include="FilterCondition.cs" />
     <Compile Include="judgment.cs" />
-    <Compile Include="judgmentCondtions.cs" />
     <Compile Include="Opinion.cs" />
     <Compile Include="Relationship.cs" />
     <Compile Include="WorldLibrary.cs" />
