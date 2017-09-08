@@ -17,13 +17,19 @@ namespace ConditionFramework
 
         public JObject SelfJudgement;  // The conditions under which the Witness in an Occurence will have this Opinion applied to them.
 
+        // Update the relationships of each participant and witness of an occurence
+        public World JudgeOccurence(Occurrence occurence, World world)
+        {
+            return world;
+        }
+        
         // Judge the occurence from the perspective of the witness actor
-        public Actor FormJudgement(Actor Judge, Occurrence occurence, World World)
+        public Actor FormJudgement(Actor judge, Occurrence occurence, World world)
         {
             // Judge the Actor
             Actor subject = null;
 
-            Relationship currentRelationship = Judge.Relationships.FirstOrDefault(r => { return r.Actor == subject.Name; });
+            Relationship currentRelationship = judge.Relationships.FirstOrDefault(r => { return r.Actor == subject.Name; });
             // If the current relationship doesn't exist, this occurence we begin a new one
             if(currentRelationship == null)
             {
@@ -33,8 +39,7 @@ namespace ConditionFramework
                     Opinions = new List<Opinion>()
                 };
             }
-
-            return Judge;
+            return judge;
         }
 
         private delegate bool JudgementDel(ref string Desc, JObject c, Occurrence o, Actor subject, Actor judge);
@@ -92,7 +97,7 @@ namespace ConditionFramework
             // This returns true if the Target in the occurence is upholding
             // any of the ideals specified in c.
             {"TargetUpholds", (ref string Desc, JObject c, Occurrence o, Actor subject, Actor judge) => {
-                return o.Target.Upholds.Any(u =>
+                return o.TargetRole.Upholds.Any(u =>
                 {
                    return (c["Upholds"] as JArray).Values().Contains(u);
                 });
@@ -100,7 +105,7 @@ namespace ConditionFramework
             // This returns true if the Actor in the occurence is upholding
             // any of the ideals specified in c.
             {"ActorUpholds", (ref string Desc, JObject c, Occurrence o, Actor subject, Actor judge) => {
-                return o.Actor.Upholds.Any(u =>
+                return o.ActorRole.Upholds.Any(u =>
                 {
                    return (c["Upholds"] as JArray).Values().Contains(u);
                 });
@@ -108,7 +113,7 @@ namespace ConditionFramework
             // This returns true if the Target in the occurence is forsaking
             // any of the ideals specified in c.
             {"TargetForsakes", (ref string Desc, JObject c, Occurrence o, Actor subject, Actor judge) => {
-                return o.Target.Forsakes.Any(u =>
+                return o.TargetRole.Forsakes.Any(u =>
                 {
                    return (c["Forsakes"] as JArray).Values().Contains(u);
                 });
@@ -116,7 +121,7 @@ namespace ConditionFramework
             // This returns true if the Actor in the occurence is forsaking
             // any of the ideals specified in c.
             {"ActorForsakes", (ref string Desc, JObject c, Occurrence o, Actor subject, Actor judge) => {
-                return o.Actor.Forsakes.Any(u =>
+                return o.ActorRole.Forsakes.Any(u =>
                 {
                    return (c["Forsakes"] as JArray).Values().Contains(u);
                 });

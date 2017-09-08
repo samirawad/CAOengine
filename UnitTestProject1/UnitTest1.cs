@@ -10,10 +10,12 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
+        string Basedir = AppDomain.CurrentDomain.BaseDirectory + @"\data\";
+
         [TestMethod]
-        public void TestJudgement()
+        public void TestFormJudgement()
         {
-            var World = new World()
+            World world = new World()
             {
                 Actors = new List<Actor>()
                 {
@@ -23,8 +25,7 @@ namespace UnitTestProject1
             };
 
             // Loads the judgement data for envy
-            string basedir = AppDomain.CurrentDomain.BaseDirectory + @"\data\";
-            Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(basedir + "opinions.json"));
+            Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(Basedir + "opinions.json"));
 
             Actor judge = new Actor()
             {
@@ -34,13 +35,25 @@ namespace UnitTestProject1
             Occurrence occurence = new Occurrence()
             {
                 Description = "some occurence",
-                Actor = new Role()
+                Actors = new List<Actor>()
+                {
+
+                },
+                Targets = new List<Actor>()
+                {
+
+                },
+                Witnesses = new List<Actor>()
+                {
+
+                },
+                ActorRole = new Role()
                 {
                     Actions = new string[] { },
                     Upholds = new string[] { },
                     Forsakes = new string[] { },
                 },
-                Target = new Role()
+                TargetRole = new Role()
                 {
                     Actions = new string[] { },
                     Upholds = new string[] { },
@@ -48,7 +61,7 @@ namespace UnitTestProject1
                 }
             };
 
-            judge = judgement.FormJudgement(judge, occurence, World);
+            judge = judgement.FormJudgement(judge, occurence, world);
 
             // The judge should now have two relationships, one the actor and the target
             Assert.IsTrue(judge.Relationships.Count == 2);
@@ -58,9 +71,12 @@ namespace UnitTestProject1
                 judge.Relationships.Exists(r =>
                 {
                     return r.Opinions.Exists(o => { return o.Judgement == "Envy"; });
-                })    
+                })
             );
-            
+
+            // Judge the entire occurence
+            world = judgement.JudgeOccurence(occurence, world);
+
         }
     }
 }
