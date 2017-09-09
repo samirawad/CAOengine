@@ -7,6 +7,9 @@ using Newtonsoft.Json.Linq;
 
 namespace ConditionFramework
 {
+    /*
+     *  This class encapsulates the logic for how judgements are passed for a perticular tag, such as Envy, Respect, etc...
+     */
     public class Judgement
     {
         public string JudgementTag; // The name of the opinion. Envy, Lust, Jealous etc
@@ -20,6 +23,7 @@ namespace ConditionFramework
         // Update the relationships of each participant and witness of an occurence
         public World JudgeOccurence(Occurrence occurence, World world)
         {
+            // For each Actor, Target and witness....
             return world;
         }
         
@@ -29,28 +33,38 @@ namespace ConditionFramework
         {
             Agent judge = world.Agents.Find(a => a.Name == judgeName);
             
-            // Judge the Actor - 
-            Agent subject = null;
+            // Judge the Actor 
 
             // If the current relationship doesn't exist, this occurence we begin a new one
-            Relationship currentRelationship = judge.Relationships.FirstOrDefault(r => { return r.Actor == subject.Name; });
-            if(currentRelationship == null)
+            // It's the relationship we'll be checking for tags, not the actual subject...
+            Relationship currentRelationship = judge.Relationships?[occurence.Actor];
+            if (currentRelationship == null)
             {
                 currentRelationship = new Relationship()
                 {
-                    Actor = subject.Name,
+                    Actor = occurence.Actor,
                     Opinions = new List<Opinion>()
                 };
             }
+
+            //string judgementReason = "";
+            //if(Judgement.JudgementIsValid(ref judgementReasion, ActorJudgement, ))
+
 
             // Judge the Target
             return world;
         }
 
-        private delegate bool JudgementDel(ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge);
+        /*
+         * Notice that when making a judgement, we reference the actual agent for the judge,
+         * but for the subject we use the judge's relationship to the subject and not the agent it represents.
+         * This is because the two can differ.  It's the relationship which matters, which is constructed by
+         * all the previous occurrences  the judge and the subject have already shared.
+         */
+        private delegate bool JudgementDel(ref string Desc, JObject c, Occurrence o, Agent judge);
 
         // Is this judgement valid from the perspective of Actor a in the Occurence o?
-        public static bool JudgementIsValid(ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge)
+        public static bool JudgementIsValid(ref string Desc, JObject c, Occurrence o, Agent judge)
         {
             bool result = false;
             foreach (var p in c.Properties())
@@ -61,7 +75,7 @@ namespace ConditionFramework
                 }
                 else
                 {
-                    result = ConditionDict[p.Name](ref Desc, c, o, subject, judge);
+                    result = ConditionDict[p.Name](ref Desc, c, o, judge);
                 }
             }
             return result;
@@ -69,13 +83,13 @@ namespace ConditionFramework
 
         private static Dictionary<string, JudgementDel> ConditionDict = new Dictionary<string, JudgementDel>()
         {
-            {"All", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
+            {"All", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 // All subcondtions need to be true
                 JArray s = c["All"] as JArray;
                 bool result = true;
                 foreach(var jc in s)
                 {
-                    bool currResult = JudgementIsValid(ref Desc, (JObject)jc, o, subject, judge);
+                    bool currResult = JudgementIsValid(ref Desc, (JObject)jc, o, judge);
                     if(!currResult)
                     {
                         result = false;
@@ -84,13 +98,13 @@ namespace ConditionFramework
                 }
                 return result;
             }},
-            {"Any", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
+            {"Any", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 // Any of subcondtions need to be true
                 JArray s = c["Any"] as JArray;
                 bool result = false;
                 foreach(var jc in s)
                 {
-                    bool currResult = JudgementIsValid(ref Desc, (JObject)jc, o, subject, judge);
+                    bool currResult = JudgementIsValid(ref Desc, (JObject)jc, o, judge);
                     if(currResult)
                     {
                         result = true;
@@ -101,7 +115,7 @@ namespace ConditionFramework
             }},
             // This returns true if the Target in the occurence is upholding
             // any of the ideals specified in c.
-            {"TargetUpholds", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
+            {"TargetUpholds", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 return o.TargetRole.Upholds.Any(u =>
                 {
                    return (c["Upholds"] as JArray).Values().Contains(u);
@@ -109,7 +123,7 @@ namespace ConditionFramework
             }},
             // This returns true if the Actor in the occurence is upholding
             // any of the ideals specified in c.
-            {"ActorUpholds", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
+            {"ActorUpholds", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 return o.ActorRole.Upholds.Any(u =>
                 {
                    return (c["Upholds"] as JArray).Values().Contains(u);
@@ -117,7 +131,7 @@ namespace ConditionFramework
             }},
             // This returns true if the Target in the occurence is forsaking
             // any of the ideals specified in c.
-            {"TargetForsakes", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
+            {"TargetForsakes", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 return o.TargetRole.Forsakes.Any(u =>
                 {
                    return (c["Forsakes"] as JArray).Values().Contains(u);
@@ -125,41 +139,69 @@ namespace ConditionFramework
             }},
             // This returns true if the Actor in the occurence is forsaking
             // any of the ideals specified in c.
-            {"ActorForsakes", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
+            {"ActorForsakes", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 return o.ActorRole.Forsakes.Any(u =>
                 {
                    return (c["Forsakes"] as JArray).Values().Contains(u);
                 });
             }},
-            // This returns true if the Actor posesses ANY of the tags specified in c
-            {"ActorAny", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            // This returns true if the Judge's relationship to the actor Actor posesses ANY of the tags specified in c
+            {"ActorAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                // The tags we're checking
+                var tags = (c["ActorAny"] as JArray).Values();
+
+                // The relationship under examination
+                var relationship = judge.Relationships?[o.Actor];
+
+                // No relationship?  Then it can't possess any of the tags
+                if(relationship == null) return false;
+                
+                // Are any of the opinions contained in the tags?
+                return relationship.Opinions.Any(opinion =>
+                {
+                    return tags.Contains(opinion.Judgement);
+                });
             }},
-            // This returns true if the Actor posesses ALL of the tags specified in c
-            {"ActorAll", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            // This returns true if the Judge's relationship to the actor Actor posesses ALL of the tags specified in c
+            {"ActorAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => { 
+                // The tags we're checking
+                var tags = (c["ActorAny"] as JArray).Values();
+
+                // The relationship under examination
+                var relationship = judge.Relationships?[o.Actor];
+
+                // No relationship?  Then it can't possess any of the tags
+                if(relationship == null) return false;
+
+                // All the tags must be present in this relationships opinions
+                return tags.All(tag => {
+                    return relationship.Opinions.Any(opinion =>
+                    {
+                        return opinion.Judgement == tag.Value<string>();
+                    });
+                });
             }},
             // This returns true if the Actor posesses NONE of the tags specified in c
-            {"ActorNone", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            {"ActorNone", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                throw new Exception("not implemeted");
             }},
             // This returns true if the Target posesses ANY of the tags specified in c
-            {"TargetAny", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            {"TargetAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => { 
+                throw new Exception("not implemeted");
             }},
             // This returns true if the Target posesses ALL of the tags specified in c
-            {"TargetAll", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            {"TargetAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                throw new Exception("not implemeted");
             }},
             // This returns true if the Target posesses NONE of the tags specified in c
-            {"TargetNone", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            {"TargetNone", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                throw new Exception("not implemeted");
             }},
-            {"SelfAny", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            {"SelfAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                throw new Exception("not implemeted");
             }},
-            {"ActionAny", (ref string Desc, JObject c, Occurrence o, Agent subject, Agent judge) => {
-                return false;
+            {"ActionAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                throw new Exception("not implemeted");
             }},
         };
     }

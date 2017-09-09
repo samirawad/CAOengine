@@ -18,7 +18,7 @@ namespace ConditionFramework
     {
         public string Name;
 
-        public List<Relationship> Relationships;
+        public Dictionary<string, Relationship> Relationships;
         
         // For any particular occurence, multiple judgements may be valid.
         // The ordering of ideals allows us to determine which judgment has the 

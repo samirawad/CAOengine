@@ -10,9 +10,9 @@ namespace ConditionFramework
     public class Occurrence
     {
         public string Description;
-        public List<string> Actors;
-        public List<string> Targets;
-        public List<string> Witnesses;
+        public string Actor;
+        public string Target;
+        public string Witness;
         public Role ActorRole;
         public Role TargetRole;
     }
