@@ -5,19 +5,15 @@
       {
         "All": [
           { "SelfAny": [ "Ambitious" ] },
-          {
-            "Any": [
-              { "ActorUpholds": [ "Power" ] },
-              {
-                "All": [
-                  { "SelfAll": [ "Kind","Cowardly" ] },
-                  { "ActionAny": [ "Confront" ] },
-                  { "TargetUpholds": [ "Cruelty" ] },
-                  { "TargetAny": [ "Powerful", "Rich" ] }
-                ]
-              }
-            ]
-          }
+          { "ActorUpholds": [ "Power" ] }
+        ]
+      },
+      {
+        "All": [
+          { "SelfAll": [ "Kind", "Cowardly" ] },
+          { "ActionAny": [ "Confront" ] },
+          { "TargetUpholds": [ "Cruelty" ] },
+          { "TargetAny": [ "Powerful", "Rich" ] }
         ]
       },
       {
@@ -33,7 +29,7 @@
             "Description": "Somoneone {0} bragged to me.",
             "ActorAny": [ "rich", "attractive" ]
           },
-          { "TargetAny": [ "self" ] },
+          { "SelfAny": [ "target" ] },
           {
             "Any": [
               {

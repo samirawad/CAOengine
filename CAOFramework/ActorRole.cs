@@ -12,8 +12,8 @@ namespace ConditionFramework
     // What ideals are being upheld?  What ideals are being forsaken?
     public class Role
     {
-        public string[] Actions;
-        public string[] Upholds;
-        public string[] Forsakes;
+        public List<string> Actions;
+        public List<string> Upholds;
+        public List<string> Forsakes;
     }
 }

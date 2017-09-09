@@ -15,53 +15,63 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestFormJudgement()
         {
+            /*
+             *  We'll need a new outcome which generates new actors into the world
+             */
             World world = new World()
             {
-                Actors = new List<Actor>()
+                Actors =
                 {
-                    new Actor(),
                     new Actor()
+                    {
+                        Name = "Usurper",
+                        Tags = { "ambitious" }
+                    },
+                    new Actor()
+                    {
+                        Name = "King",
+                        Tags = { "unjust" }
+                    },
+                    new Actor()
+                    {
+                        Name = "Witness",
+                        Tags = { "ambitious" }
+                    }
                 }
             };
-
             // Loads the judgement data for envy
-            Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(Basedir + "opinions.json"));
+            Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(Basedir + "envy.json"));
 
-            Actor judge = new Actor()
-            {
-
-            };
-
+            /*
+             *  Its imporatant to note than when a judgement is being calculated, it's from the perspective
+             *  of the witness.  Regardless of if the Tyrant actually posesses the 'unjust' trait, the witness
+             *  is drawing from their current relationship to make the judgement.  If the witness doesn't actually
+             *  have a relationship to the  
+             */
             Occurrence occurence = new Occurrence()
             {
-                Description = "some occurence",
-                Actors = new List<Actor>()
-                {
-
-                },
-                Targets = new List<Actor>()
-                {
-
-                },
-                Witnesses = new List<Actor>()
-                {
-
-                },
+                Description = "The ambitious Usurper siezes the throne from the unjust King!",
+                Actors = { "Usurper" },
+                Targets = { "King" },
+                Witnesses = { "Witness" },
                 ActorRole = new Role()
                 {
-                    Actions = new string[] { },
-                    Upholds = new string[] { },
-                    Forsakes = new string[] { },
+                    Actions =  { "Dethrone" },
+                    Upholds =  { "Power" },
+                    Forsakes = { },
                 },
                 TargetRole = new Role()
                 {
-                    Actions = new string[] { },
-                    Upholds = new string[] { },
-                    Forsakes = new string[] { },
+                    Actions = { },
+                    Upholds = { },
+                    Forsakes = { },
                 }
             };
 
-            judge = judgement.FormJudgement(judge, occurence, world);
+            // Judge the entire occurence
+            world = judgement.JudgeOccurence(occurence, world);
+
+            Actor judge = world.Actors.Find(p => p.Name == "Witness");
 
             // The judge should now have two relationships, one the actor and the target
             Assert.IsTrue(judge.Relationships.Count == 2);
@@ -73,9 +83,6 @@ namespace UnitTestProject1
                     return r.Opinions.Exists(o => { return o.Judgement == "Envy"; });
                 })
             );
-
-            // Judge the entire occurence
-            world = judgement.JudgeOccurence(occurence, world);
 
         }
     }
