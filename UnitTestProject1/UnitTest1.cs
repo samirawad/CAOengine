@@ -20,19 +20,19 @@ namespace UnitTestProject1
              */
             World world = new World()
             {
-                Actors =
+                Agents =
                 {
-                    new Actor()
+                    new Agent()
                     {
                         Name = "Usurper",
                         Tags = { "ambitious" }
                     },
-                    new Actor()
+                    new Agent()
                     {
                         Name = "King",
                         Tags = { "unjust" }
                     },
-                    new Actor()
+                    new Agent()
                     {
                         Name = "Witness",
                         Tags = { "ambitious" }
@@ -68,10 +68,9 @@ namespace UnitTestProject1
                 }
             };
 
-            // Judge the entire occurence
-            world = judgement.JudgeOccurence(occurence, world);
-
-            Actor judge = world.Actors.Find(p => p.Name == "Witness");
+            // Judge the occurence from the point of view of the witness
+            world = judgement.FormJudgement("Witness", occurence, world);
+            Agent judge = world.Agents.Find(p => p.Name == "Witness");
 
             // The judge should now have two relationships, one the actor and the target
             Assert.IsTrue(judge.Relationships.Count == 2);
@@ -83,6 +82,11 @@ namespace UnitTestProject1
                     return r.Opinions.Exists(o => { return o.Judgement == "Envy"; });
                 })
             );
+
+            // Judge the entire occurence
+            world = judgement.JudgeOccurence(occurence, world);
+
+            
 
         }
     }
