@@ -32,8 +32,10 @@ namespace ConditionFramework
         public World FormJudgement(string judgeName, Occurrence occurence, World world)
         {
             Agent judge = world.Agents.Find(a => a.Name == judgeName);
-            
-            // Judge the Actor 
+
+            /////////////////////
+            // Judge the Actor // 
+            /////////////////////
 
             // If the current relationship doesn't exist, this occurence we begin a new one
             // It's the relationship we'll be checking for tags, not the actual subject...
@@ -47,11 +49,42 @@ namespace ConditionFramework
                 };
             }
 
-            //string judgementReason = "";
-            //if(Judgement.JudgementIsValid(ref judgementReasion, ActorJudgement, ))
+            string judgementReason = "";
+            if(Judgement.JudgementIsValid(ref judgementReason, ActorJudgement, occurence, judge))
+            {
+                currentRelationship.Opinions.Add(new Opinion()
+                {
+                    Judgement = JudgementTag,
+                    Reason = judgementReason
+                });
+            }
 
+            ///////////////////////
+            // Judge the Target  // 
+            ///////////////////////
 
-            // Judge the Target
+            // If the current relationship doesn't exist, this occurence we begin a new one
+            // It's the relationship we'll be checking for tags, not the actual subject...
+            currentRelationship = judge.Relationships?[occurence.Target];
+            if (currentRelationship == null)
+            {
+                currentRelationship = new Relationship()
+                {
+                    Actor = occurence.Actor,
+                    Opinions = new List<Opinion>()
+                };
+            }
+
+            judgementReason = "";
+            if (Judgement.JudgementIsValid(ref judgementReason, TargetJudgement, occurence, judge))
+            {
+                currentRelationship.Opinions.Add(new Opinion()
+                {
+                    Judgement = JudgementTag,
+                    Reason = judgementReason
+                });
+            }
+
             return world;
         }
 
@@ -71,6 +104,7 @@ namespace ConditionFramework
             {
                 if (p.Name == "Description")
                 {
+                    // append any additional description to the end.
                     Desc += c["Description"].Value<string>() + Environment.NewLine;
                 }
                 else
@@ -96,6 +130,10 @@ namespace ConditionFramework
                         break;
                     }
                 }
+                if(result)
+                {
+                    Desc = "All true: " + Desc;
+                }
                 return result;
             }},
             {"Any", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
@@ -111,39 +149,87 @@ namespace ConditionFramework
                         break;
                     }
                 }
+                if(result)
+                {
+                    Desc = "At least one true: " + Desc + Environment.NewLine;
+                }
                 return result;
             }},
             // This returns true if the Target in the occurence is upholding
             // any of the ideals specified in c.
             {"TargetUpholds", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                return o.TargetRole.Upholds.Any(u =>
+                bool result = false;
+                List<string> upheld = new List<string>();
+                foreach(var upheldIdeal in o.TargetRole.Upholds)
                 {
-                   return (c["Upholds"] as JArray).Values().Contains(u);
-                });
+                    if((c["TargetUpholds"] as JArray).Values().Contains(upheldIdeal))
+                    {
+                        result = true;
+                        upheld.Add(upheldIdeal);
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Target + " upheld the ideal(s): " + String.Join(",", upheld);
+                }
+                return result;
             }},
             // This returns true if the Actor in the occurence is upholding
             // any of the ideals specified in c.
             {"ActorUpholds", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                return o.ActorRole.Upholds.Any(u =>
+                bool result = false;
+                List<string> upheld = new List<string>();
+                foreach(var upheldIdeal in o.ActorRole.Upholds)
                 {
-                   return (c["Upholds"] as JArray).Values().Contains(u);
-                });
+                    if((c["ActorUpholds"] as JArray).Values().Contains(upheldIdeal))
+                    {
+                        result = true;
+                        upheld.Add(upheldIdeal);
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Actor + " upheld the ideal(s): " + String.Join(",", upheld);
+                }
+                return result;
             }},
             // This returns true if the Target in the occurence is forsaking
             // any of the ideals specified in c.
             {"TargetForsakes", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                return o.TargetRole.Forsakes.Any(u =>
+                bool result = false;
+                List<string> forsaken = new List<string>();
+                foreach(var forsakenIdeal in o.TargetRole.Forsakes)
                 {
-                   return (c["Forsakes"] as JArray).Values().Contains(u);
-                });
+                    if((c["TargetForsakes"] as JArray).Values().Contains(forsakenIdeal))
+                    {
+                        result = true;
+                        forsaken.Add(forsakenIdeal);
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Target + " has forsaken the ideal(s): " + String.Join(",", forsaken);
+                }
+                return result;
             }},
             // This returns true if the Actor in the occurence is forsaking
             // any of the ideals specified in c.
             {"ActorForsakes", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                return o.ActorRole.Forsakes.Any(u =>
+                bool result = false;
+                List<string> forsaken = new List<string>();
+                foreach(var forsakenIdeal in o.ActorRole.Forsakes)
                 {
-                   return (c["Forsakes"] as JArray).Values().Contains(u);
-                });
+                    if((c["ActorForsakes"] as JArray).Values().Contains(forsakenIdeal))
+                    {
+                        result = true;
+                        forsaken.Add(forsakenIdeal);
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Actor + " has forsaken the ideal(s): " + String.Join(",", forsaken);
+                }
+                return result;
             }},
             // This returns true if the Judge's relationship to the actor Actor posesses ANY of the tags specified in c
             {"ActorAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
@@ -157,10 +243,23 @@ namespace ConditionFramework
                 if(relationship == null) return false;
                 
                 // Are any of the opinions contained in the tags?
-                return relationship.Opinions.Any(opinion =>
+                bool result = false;
+                List<string> actorTags = new List<string>();
+                foreach(var tag in tags)
                 {
-                    return tags.Contains(opinion.Judgement);
-                });
+                    if(relationship.Opinions.Any(opinion => {
+                        return opinion.Judgement == tag.Value<string>();
+                    }))
+                    {
+                        result = true;
+                        actorTags.Add(tag.Value<string>());
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Actor + " is considered by " + judge.Name + " to be: " + String.Join(",", actorTags);
+                }
+                return result;
             }},
             // This returns true if the Judge's relationship to the actor Actor posesses ALL of the tags specified in c
             {"ActorAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => { 
@@ -174,34 +273,133 @@ namespace ConditionFramework
                 if(relationship == null) return false;
 
                 // All the tags must be present in this relationships opinions
-                return tags.All(tag => {
-                    return relationship.Opinions.Any(opinion =>
-                    {
+                bool result = true;
+                foreach(var tag in tags)
+                {
+                    if(!relationship.Opinions.Any(opinion => {
                         return opinion.Judgement == tag.Value<string>();
-                    });
-                });
+                    }))
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Actor + " is considered by " + judge.Name + " to be: " + String.Join(",", tags);
+                }
+                return result;
             }},
-            // This returns true if the Actor posesses NONE of the tags specified in c
+            // This returns true if the Judge's relationship to the actor Actor posesses NONE of the tags specified in c
             {"ActorNone", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 throw new Exception("not implemeted");
             }},
-            // This returns true if the Target posesses ANY of the tags specified in c
+            // This returns true if the Judge's relationship to the actor Actor posesses ANY of the tags specified in c
             {"TargetAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => { 
-                throw new Exception("not implemeted");
+                // The tags we're checking
+                var tags = (c["TargetAny"] as JArray).Values();
+
+                // The relationship under examination
+                var relationship = judge.Relationships?[o.Target];
+
+                // No relationship?  Then it can't possess any of the tags
+                if(relationship == null) return false;
+                
+                // Are any of the opinions contained in the tags?
+                bool result = false;
+                List<string> targetTags = new List<string>();
+                foreach(var tag in tags)
+                {
+                    if(relationship.Opinions.Any(opinion => {
+                        return opinion.Judgement == tag.Value<string>();
+                    }))
+                    {
+                        result = true;
+                        targetTags.Add(tag.Value<string>());
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Target + " is considered by " + judge.Name + " to be: " + String.Join(",", targetTags);
+                }
+                return result;
             }},
-            // This returns true if the Target posesses ALL of the tags specified in c
+            // This returns true if the Judge's relationship to the actor Actor posesses ALL of the tags specified in c
             {"TargetAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                throw new Exception("not implemeted");
+                // The tags we're checking
+                var tags = (c["TargetAll"] as JArray).Values();
+
+                // The relationship under examination
+                var relationship = judge.Relationships?[o.Target];
+
+                // No relationship?  Then it can't possess any of the tags
+                if(relationship == null) return false;
+
+                // All the tags must be present in this relationships opinions
+                bool result = true;
+                foreach(var tag in tags)
+                {
+                    if(!relationship.Opinions.Any(opinion => {
+                        return opinion.Judgement == tag.Value<string>();
+                    }))
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Target + " is considered by " + judge.Name + " to be: " + String.Join(",", tags);
+                }
+                return result;
             }},
-            // This returns true if the Target posesses NONE of the tags specified in c
+            // This returns true if the Judge's relationship to the actor Actor posesses NONE of the tags specified in c
             {"TargetNone", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 throw new Exception("not implemeted");
             }},
+            // This returns if the judge posesesses ANY of the tags specified in c
             {"SelfAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 throw new Exception("not implemeted");
             }},
-            {"ActionAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+            // This returns if the judge posesesses ALL of the tags specified in c
+            {"SelfAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
                 throw new Exception("not implemeted");
+            }},
+            // This returns true if the Actor in the occurence is performing any of the actions specified in c
+            {"ActorActionsAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                bool result = false;
+                List<string> actorActions = new List<string>();
+                foreach(var action in o.ActorRole.Actions)
+                {
+                    if((c["ActionActionsAny"] as JArray).Values().Contains(action))
+                    {
+                        result = true;
+                        actorActions.Add(action);
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Actor + " performed the action(s): " + String.Join(",", actorActions);
+                }
+                return result;
+            }},
+            // This returns true if the Actor in the occurence is performing any of the actions specified in c
+            {"TargetActionsAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
+                bool result = false;
+                List<string> targetActions = new List<string>();
+                foreach(var action in o.TargetRole.Actions)
+                {
+                    if((c["TargetActionsAny"] as JArray).Values().Contains(action))
+                    {
+                        result = true;
+                        targetActions.Add(action);
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + o.Target + " performed the action(s): " + String.Join(",", targetActions);
+                }
+                return result;
             }},
         };
     }

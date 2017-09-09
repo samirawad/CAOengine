@@ -11,7 +11,7 @@
       {
         "All": [
           { "SelfAll": [ "Kind", "Cowardly" ] },
-          { "ActionAny": [ "Confront" ] },
+          { "ActorActionsAny": [ "Confront" ] },
           { "TargetUpholds": [ "Cruelty" ] },
           { "TargetAny": [ "Powerful", "Rich" ] }
         ]
@@ -24,7 +24,7 @@
       },
       {
         "All": [
-          { "ActionAny": [ "brag" ] },
+          { "ActorActionsAny": [ "brag" ] },
           {
             "Description": "Somoneone {0} bragged to me.",
             "ActorAny": [ "rich", "attractive" ]
@@ -52,7 +52,7 @@
       },
       {
         "All": [
-          { "ActionAny": [ "flirt", "dance", "kiss" ] },
+          { "ActorActionsAny": [ "flirt", "dance", "kiss" ] },
           { "TargetAny": [ "partner", "attracted" ] }
         ]
       }
@@ -67,8 +67,8 @@
       {
         "Description": "Envious of those who display patience in the face of bullying",
         "All": [
-          { "ActionAny": [ "Bullying" ] },
-          { "ActorUpholds": [ "Patience" ] }
+          { "ActorActionsAny": [ "Bullying" ] },
+          { "TargetUpholds": [ "Patience" ] }
         ]
       },
       {
@@ -78,7 +78,7 @@
             "SelfAny": [ "Greedy" ]
           },
           {
-            "ActionAny": [ "gift" ]
+            "ActorActionAny": [ "gift" ]
           }
         ]
       },
@@ -86,7 +86,7 @@
         "Description": "My vain nature makes me envious of those who recieve amorous attention",
         "All": [
           { "SelfAny": "vain" },
-          { "ActionAny": [ "flirt" ] },
+          { "ActorActionsAny": [ "flirt" ] },
           {
             "Any": [
               {

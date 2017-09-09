@@ -51,9 +51,9 @@ namespace UnitTestProject1
             Occurrence occurence = new Occurrence()
             {
                 Description = "The ambitious Usurper siezes the throne from the unjust King!",
-                Actor = { "Usurper" },
-                Target = { "King" },
-                Witness = { "Witness" },
+                Actor = "Usurper",
+                Target = "King",
+                Witness = "Witness",
                 ActorRole = new Role()
                 {
                     Actions =  { "Dethrone" },
@@ -77,7 +77,7 @@ namespace UnitTestProject1
 
             // The judge's relationships should include one which has the envy tag
             //Assert.IsTrue(
-            //    judge.Relationships.Values.(r =>
+            //    judge.Relationships.Values(r =>
             //    {
             //        return r.Opinions.Exists(o => { return o.Judgement == "Envy"; });
             //    })
