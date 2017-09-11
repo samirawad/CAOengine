@@ -2602,4 +2602,449 @@ A chat eventFlirt
       ]
     }
   ]
-}Opinions loadedJudgements loadedJudgements loadedJudgements loaded
+}Opinions loadedJudgements loadedJudgements loadedJudgements loaded{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Racian",
+        "SurName": "Leighteo"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "gregarious",
+        "honorable"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ubakari",
+        "SurName": "Ottheighl"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "incurious",
+        "melancholy",
+        "strong-willed",
+        "adventurous",
+        "responsible"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ochukwuemek",
+        "SurName": "Wasabroxlisl"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Western Human"
+      ],
+      "Traits": [
+        "philosophical",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Ayunna",
+        "SurName": "Abraniels"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "beautiful",
+        "short",
+        "distrustful",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Ylennyx",
+        "SurName": "Akinceyl"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Dragonkin"
+      ],
+      "Traits": [
+        "lighthearted",
+        "beautiful",
+        "modest",
+        "thin",
+        "trusting"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Afiyah",
+        "SurName": "Dillenaj"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Dragonkin"
+      ],
+      "Traits": [
+        "irresponsible",
+        "confident",
+        "modest"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Gianni",
+        "SurName": "Nnalupio"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "irresponsible",
+        "undisciplined",
+        "honorable",
+        "tempermental"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Yzleen",
+        "SurName": "Ronellai"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "brilliant",
+        "dishonorable",
+        "shy",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Yndely",
+        "SurName": "Elleenne"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "grim",
+        "strong-willed",
+        "modest",
+        "reflective"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Haelan",
+        "SurName": "Elynalei"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Forest Elf"
+      ],
+      "Traits": [
+        "beautiful",
+        "sincere",
+        "self-assured"
+      ],
+      "Tags": []
+    }
+  ]
+}{}10 NPC Agents created
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  },
+  "NPCs": [
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Racian",
+        "SurName": "Leighteo"
+      },
+      "Profession": [
+        "Mercenary"
+      ],
+      "Race": [
+        "Troll"
+      ],
+      "Traits": [
+        "gregarious",
+        "honorable"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ubakari",
+        "SurName": "Ottheighl"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "incurious",
+        "melancholy",
+        "strong-willed",
+        "adventurous",
+        "responsible"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Ochukwuemek",
+        "SurName": "Wasabroxlisl"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Western Human"
+      ],
+      "Traits": [
+        "philosophical",
+        "disorganized"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Ayunna",
+        "SurName": "Abraniels"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "beautiful",
+        "short",
+        "distrustful",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Ylennyx",
+        "SurName": "Akinceyl"
+      },
+      "Profession": [
+        "Paladin"
+      ],
+      "Race": [
+        "Dragonkin"
+      ],
+      "Traits": [
+        "lighthearted",
+        "beautiful",
+        "modest",
+        "thin",
+        "trusting"
+      ],
+      "Tags": [
+        "Complimented"
+      ]
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Afiyah",
+        "SurName": "Dillenaj"
+      },
+      "Profession": [
+        "Monk"
+      ],
+      "Race": [
+        "Dragonkin"
+      ],
+      "Traits": [
+        "irresponsible",
+        "confident",
+        "modest"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "male",
+      "Name": {
+        "GivenName": "Gianni",
+        "SurName": "Nnalupio"
+      },
+      "Profession": [
+        "Barbarian"
+      ],
+      "Race": [
+        "Halfling"
+      ],
+      "Traits": [
+        "irresponsible",
+        "undisciplined",
+        "honorable",
+        "tempermental"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Yzleen",
+        "SurName": "Ronellai"
+      },
+      "Profession": [
+        "Mage"
+      ],
+      "Race": [
+        "Goblin"
+      ],
+      "Traits": [
+        "brilliant",
+        "dishonorable",
+        "shy",
+        "clumsy"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Yndely",
+        "SurName": "Elleenne"
+      },
+      "Profession": [
+        "Cleric"
+      ],
+      "Race": [
+        "Dogkin"
+      ],
+      "Traits": [
+        "grim",
+        "strong-willed",
+        "modest",
+        "reflective"
+      ],
+      "Tags": []
+    },
+    {
+      "Gender": "female",
+      "Name": {
+        "GivenName": "Haelan",
+        "SurName": "Elynalei"
+      },
+      "Profession": [
+        "Ranger"
+      ],
+      "Race": [
+        "Forest Elf"
+      ],
+      "Traits": [
+        "beautiful",
+        "sincere",
+        "self-assured"
+      ],
+      "Tags": []
+    }
+  ]
+}{
+  "e51e0faa-1ea6-4154-80f3-a4c1fbaf0be1": {
+    "Description": "A flirt occured with witnesses",
+    "Actor": null,
+    "Target": null,
+    "Witness": null,
+    "ActorRole": null,
+    "TargetRole": null
+  }
+}The target was chatted up.A flirt occured with witnesses
+A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.

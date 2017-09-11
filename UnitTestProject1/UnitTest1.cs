@@ -5,6 +5,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
+
 namespace UnitTestProject1
 {
     [TestClass]
@@ -25,17 +26,17 @@ namespace UnitTestProject1
                     new Agent()
                     {
                         Name = "Usurper",
-                        Tags = { "ambitious" }
+                        Tags = { "Ambitious" }
                     },
                     new Agent()
                     {
                         Name = "King",
-                        Tags = { "unjust" }
+                        Tags = { "Unjust" }
                     },
                     new Agent()
                     {
                         Name = "Witness",
-                        Tags = { "ambitious" }
+                        Tags = { "Ambitious" }
                     }
                 }
             };
@@ -76,16 +77,15 @@ namespace UnitTestProject1
             Assert.IsTrue(judge.Relationships.Count == 2);
 
             // The judge's relationships should include one which has the envy tag
-            //Assert.IsTrue(
-            //    judge.Relationships.Values(r =>
-            //    {
-            //        return r.Opinions.Exists(o => { return o.Judgement == "Envy"; });
-            //    })
-            //);
+            Assert.IsTrue(
+                judge.Relationships["Usurper"].Opinions.Exists(opinion => {
+                    return opinion.Judgement == "Envy";
+                })
+            );
 
             // Judge the entire occurence
             world = judgement.JudgeOccurence(occurence, world);
-
+            
             
 
         }
