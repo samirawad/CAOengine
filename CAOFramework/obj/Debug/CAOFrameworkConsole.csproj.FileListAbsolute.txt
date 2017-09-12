@@ -1,0 +1,9 @@
+C:\Users\Samir\Documents\CAOengine\CAOFramework\obj\Debug\CAOFramework.exe
+C:\Users\Samir\Documents\CAOengine\CAOFramework\obj\Debug\CAOFramework.pdb
+C:\Users\Samir\Documents\CAOengine\CAOFramework\obj\Debug\CAOFrameworkConsole.csprojResolveAssemblyReference.cache
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOFramework.exe
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOFramework.pdb
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOEngine.dll
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\CAOEngine.pdb
+C:\Users\Samir\Documents\CAOengine\CAOFramework\bin\Debug\Newtonsoft.Json.xml

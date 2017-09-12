@@ -1,0 +1,6 @@
+C:\Users\Samir\Documents\CAOengine\CAOEngine\bin\Debug\CAOEngine.dll
+C:\Users\Samir\Documents\CAOengine\CAOEngine\bin\Debug\CAOEngine.pdb
+C:\Users\Samir\Documents\CAOengine\CAOEngine\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Samir\Documents\CAOengine\CAOEngine\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Samir\Documents\CAOengine\CAOEngine\obj\Debug\CAOEngine.dll
+C:\Users\Samir\Documents\CAOengine\CAOEngine\obj\Debug\CAOEngine.pdb

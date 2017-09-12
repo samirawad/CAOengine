@@ -59,13 +59,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\CAOEngine\CAOEngine.csproj">
+      <Project>{61080907-45a1-4698-935d-8cb3bce55b9d}</Project>
+      <Name>CAOEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CAOFramework\CAOFramework.csproj">
-      <Project>{4d98e2ba-6c9c-43f9-9724-7926629c1b65}</Project>
-      <Name>CAOFramework</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
