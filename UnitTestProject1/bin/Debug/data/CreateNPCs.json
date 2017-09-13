@@ -1,0 +1,221 @@
+﻿{
+  "Selectors": {
+    "World": {
+      "From": "$"
+    },
+    "RandomSpeaker": {
+      "From": "NPCsWhoHaventSpokenYet",
+      "How": "RndOne"
+    },
+    "RandomListeners": {
+      "From": "NPCsWhoHaventSpokenYet",
+      "How": "RndMulti",
+      "Params": {
+        "Min": 2,
+        "Max": 3
+      }
+    },
+    "AllNPCs": {
+      "From": "$..NPCs"
+    },
+    "NPCsWhoHaventSpokenYet": {
+      "From": "AllNPCs",
+      "Where": "HadNoConversation",
+      "Minimum": 3
+    },
+    "NPCsWhoJustHadaConversation": {
+      "From": "AllNPCs",
+      "Where": "JustHadConversation"
+    },
+    "SpeakerWhoJustSpoke": {
+      "From": "AllNPCs",
+      "Where": "JustSpoke"
+    },
+    "ListenersWhoJustListened": {
+      "From": "AllNPCs",
+      "Where": "JustListened"
+    }
+  },
+  "Filters": {
+    "Listened": {
+      "Function": "HasTag",
+      "Params": {
+        "Collection": "Tags",
+        "Tag": "Listened"
+      }
+    },
+    "Spoke": {
+      "Function": "HasTag",
+      "Params": {
+        "Collection": "Tags",
+        "Tag": "Spoke"
+      }
+    },
+    "JustListened": {
+      "Function": "HasTag",
+      "Params": {
+        "Collection": "Tags",
+        "Tag": "JustListened"
+      }
+    },
+    "JustSpoke": {
+      "Function": "HasTag",
+      "Params": {
+        "Collection": "Tags",
+        "Tag": "JustSpoke"
+      }
+    },
+    "IsHappy": {
+      "Function": "HasTag",
+      "Parameters": {
+        "Collection": "Tags",
+        "Tag": "happy"
+      }
+    }
+  },
+  "FilterConditions": {
+    "HadNoConversation": {
+      "Condition": "NoneMustBeTrue",
+      "Filters": [ "Spoke", "Listened", "JustSpoke", "JustListened" ]
+    },
+    "HadConversation": {
+      "Condition": "AnyMustBeTrue",
+      "Filters": [ "Spoke", "Listened", "JustSpoke", "JustListened" ]
+    },
+    "JustHadConversation": {
+      "Condition": "AnyMustBeTrue",
+      "Filters": [ "JustSpoke", "JustListened" ]
+    },
+    "HappyConversation": {
+      "Condition": "AllMustBeTrue",
+      "Filters": [ "IsHappy", "HadConversation" ]
+    }
+  },
+  "Actions": {
+    "CreateNPC": {
+      "SetsStage": "CreateNPC",
+      "RequiresEmpty": "AllNPCs",
+      "Description": "Make npcs"
+    },
+    "DoConversation": {
+      "SetsStage": "DoConversation",
+      "Requires": "NPCsWhoHaventSpokenYet",
+      "Description": "Run a conversation"
+    },
+    "DoConversationAgain": {
+      "SetsStage": "DoConversation2",
+      "Requires": "NPCsWhoHaventSpokenYet",
+      "Description": "Second action to run a conversation"
+    }
+  },
+  "Outcomes": {
+    "NPCcreated": {
+      "ParentStages": [ "CreateNPC" ],
+      "SetsStage": "NONE",
+      "Selections": {
+        "World": "World"
+      },
+      "Tasks": [
+        {
+          "Function": "CreateObjectToBucket",
+          "Parameters": {
+            "Target": "World",
+            "Template": "Agent",
+            "Bucket": "NPCs",
+            "Number": 10,
+            "Description": "<Number> NPC Agents created"
+          }
+        }
+      ]
+    },
+    "AddressCrowd": {
+      "ParentStages": [ "DoConversation", "DoConversation2" ],
+      "Requires": "NPCsWhoHaventSpokenYet",
+      "SetsStage": "CrowdListens",
+      "Selections": {
+        "Speaker": "RandomSpeaker"
+      },
+      "Tasks": [
+        {
+          "Function": "AddTag",
+          "Parameters": {
+            "Target": "Speaker",
+            "Property": "Tags",
+            "Value": "JustSpoke",
+            "Description": "The speaker speaks"
+          }
+        }
+      ]
+    },
+    "CrowdListens": {
+      "ParentStages": [ "CrowdListens" ],
+      "Requires": "NPCsWhoHaventSpokenYet",
+      "SetsStage": "LectureMemory",
+      "Selections": {
+        "Listeners": "RandomListeners"
+      },
+      "Tasks": [
+        {
+          "Function": "AddTag",
+          "Parameters": {
+            "Target": "Listeners",
+            "Property": "Tags",
+            "Value": "JustListened",
+            "Description": "The crowd listens"
+          }
+        }
+      ]
+    },
+    "LectureMemory": {
+      "ParentStages": [ "LectureMemory" ],
+      "Requires": "NPCsWhoJustHadaConversation",
+      "SetsStage": "NONE",
+      "Selections": {
+        "Speaker": "SpeakerWhoJustSpoke",
+        "Listeners": "ListenersWhoJustListened"
+      },
+      "Tasks": [
+        {
+          "Function": "ReplaceTag",
+          "Parameters": {
+            "Target": "Listeners",
+            "Property": "Tags",
+            "Value": "JustListened",
+            "NewValue": "Listened",
+            "Description": "The crowd finishes listening"
+          }
+        },
+        {
+          "Function": "ReplaceTag",
+          "Parameters": {
+            "Target": "Speaker",
+            "Property": "Tags",
+            "Value": "JustSpoke",
+            "NewValue": "Spoke",
+            "Description": "The speaker finishes speaking"
+          }
+        },
+        {
+          "Function": "AddMemory",
+          "Parameters": {
+            "Roles": {
+              "Speaker": {
+                "Details": {
+                  "Description": "Addressed a small audience",
+                  "Tags": [ "Orator", "Confidence" ]
+                }
+              },
+              "Listeners": {
+                "Details": {
+                  "Description": "Listened to a lecture",
+                  "Tags": [ "Student", "GoodListener" ]
+                }
+              }
+            },
+            "Description": "A lecture with speakers and listeners"
+          }
+        }
+      ]
+    }
+  }
+}

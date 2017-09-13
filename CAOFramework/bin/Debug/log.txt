@@ -3047,4 +3047,16 @@ A chat eventFlirt
   }
 }The target was chatted up.A flirt occured with witnesses
 A chat eventFlirt
+--------------------------------------------------------------Press any key to continue.{
+  "Player": {
+    "Name": "Player",
+    "CurrentActivity": "NONE",
+    "Stats": {
+      "Str": 14,
+      "Con": 10,
+      "Dex": 10,
+      "Int": 14
+    }
+  }
+}{}Make npcsNPCcreated
 --------------------------------------------------------------Press any key to continue.

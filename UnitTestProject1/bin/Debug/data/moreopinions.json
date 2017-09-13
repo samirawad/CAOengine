@@ -1,0 +1,39 @@
+, "Respect": {
+  "Actor": {
+    "Any": [
+      {
+        "All": [
+          { "SelfAny": [ "Honorable" ] },
+          {
+            "Uphold": [
+              "Justice",
+              "Friendship",
+              "Loyalty",
+              "Duty"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Target": {}
+}, "Disgust": {
+  "Actor": {
+    "Any": [
+      {
+        "All": [
+          { "SelfAny": [ "Honorable" ] },
+          {
+            "Forsake": [
+              "Justice",
+              "Friendship",
+              "Loyalty",
+              "Duty"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Target": {}
+}

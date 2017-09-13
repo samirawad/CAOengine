@@ -1,0 +1,50 @@
+﻿{
+  "Selectors": {
+    "World": {
+      "From": [ "$" ],
+      "Groups": {
+        "World": {}
+      }
+    },
+    "AllNPCs": {
+      "From": [ "$..NPCs" ],
+      "Groups": {
+        "AllNPCs": {}
+      }
+    }
+  },
+  "Filters": {
+    "All": {
+      "Function": "All"
+    }
+  },
+  "CompoundFilters": {
+
+  },
+  "Actions": {
+    "CreateNPC": {
+      "SetsStage": "CreateNPC",
+      "RequiresEmpty": "AllNPCs",
+      "Description": "Make npcs"
+    }
+  },
+  "Outcomes": {
+    "NPCcreated": {
+      "ParentStages": [ "CreateNPC" ],
+      "SetsStage": "NONE",
+      "Selection": "World",
+      "Steps": [
+        {
+          "Function": "CreateObjectToCollection",
+          "Parameters": {
+            "Target": "World",
+            "Template": "Agent",
+            "Collection": "NPCs",
+            "Number": 10,
+            "Description": "<Number> NPC Agents created"
+          }
+        }
+      ]
+    }
+  }
+}

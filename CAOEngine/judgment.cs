@@ -109,7 +109,14 @@ namespace ConditionFramework
                 }
                 else
                 {
-                    result = ConditionDict[p.Name](ref Desc, c, o, judge);
+                    if(ConditionDict.ContainsKey(p.Name))
+                    {
+                        result = ConditionDict[p.Name](ref Desc, c, o, judge);
+                    }
+                    else
+                    {
+                        throw new Exception(string.Format("Condition function {0} not found!", p.Name));
+                    }
                 }
             }
             return result;
@@ -292,7 +299,7 @@ namespace ConditionFramework
             }},
             // This returns true if the Judge's relationship to the actor Actor posesses NONE of the tags specified in c
             {"ActorNone", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                throw new Exception("not implemeted");
+                throw new Exception("ActorNone not implemeted");
             }},
             // This returns true if the Judge's relationship to the actor Actor posesses ANY of the tags specified in c
             {"TargetAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => { 
@@ -355,15 +362,35 @@ namespace ConditionFramework
             }},
             // This returns true if the Judge's relationship to the actor Actor posesses NONE of the tags specified in c
             {"TargetNone", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                throw new Exception("not implemeted");
+                throw new Exception("TargetNone not implemeted");
             }},
             // This returns if the judge posesesses ANY of the tags specified in c
             {"SelfAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                throw new Exception("not implemeted");
+                // The tags we're checking
+                var tags = (c["SelfAny"] as JArray).Values();
+
+                // Are any of the opinions contained in the tags?
+                bool result = false;
+                List<string> selftags = new List<string>();
+                foreach(var tag in tags)
+                {
+                    if(judge.Tags.Any(selftag => {
+                        return selftag == tag.Value<string>();
+                    }))
+                    {
+                        result = true;
+                        selftags.Add(tag.Value<string>());
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + judge.Name + " posseses the tag(s): " + String.Join(",", selftags);
+                }
+                return result;
             }},
             // This returns if the judge posesesses ALL of the tags specified in c
             {"SelfAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                throw new Exception("not implemeted");
+                throw new Exception("SelfAll not implemeted");
             }},
             // This returns true if the Actor in the occurence is performing any of the actions specified in c
             {"ActorActionsAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
@@ -371,7 +398,7 @@ namespace ConditionFramework
                 List<string> actorActions = new List<string>();
                 foreach(var action in o.ActorRole.Actions)
                 {
-                    if((c["ActionActionsAny"] as JArray).Values().Contains(action))
+                    if((c["ActorActionsAny"] as JArray).Values().Contains(action))
                     {
                         result = true;
                         actorActions.Add(action);

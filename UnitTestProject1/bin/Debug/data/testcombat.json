@@ -1,0 +1,220 @@
+﻿{
+  "Terms": {
+    "Default": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "Player.CurrentActivity",
+        "ValueToCheck": "NONE"
+      }
+    },
+    "IsInjured": {
+      "TermFunction": "PropertyHasStringValue",
+      "Parameters": {
+        "PropertyToCheck": "Health",
+        "ValueToCheck": "Injured"
+      }
+    }
+  },
+  "Conditions": {
+  },
+  "Actions": {
+    "begincombat": {
+      "ValidityCondition": "Default",
+      "SetsStage": "CombatBegins",
+      "Description": "Begin combat..."
+    },
+    "createadventurer": {
+      "ValidityCondition": "Default",
+      "SetsStage": "CreateAdventurer",
+      "Description": "Create an adventurer."
+    }
+  },
+  "Outcomes": {
+    "createadventurer": {
+      "ParentStage": "CreateAdventurer",
+      "SetsStage": "NONE",
+      "Steps": [
+        {
+          "Function": "CreateObjectToBucket",
+          "Parameters": {
+            "Template": "Agent",
+            "Bucket": "Agents",
+            "CreationParams": {
+              "NickName": "coolguy"
+            },
+            "Description": "generation complete"
+          }
+        }
+      ]
+    },
+    "combatstart": {
+      "ParentStage": "CombatBegins",
+      "SetsStage": "Initiative",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "Combat Begins!"
+          }
+        }
+      ]
+    },
+    "resolveinitiative": {
+      "ParentStage": "Initiative",
+      "SetsStage": "ResolveInitiative",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The combatants circle each other carefully, looking for an opening..."
+          }
+        }
+      ]
+    },
+    "playerattacks": {
+      "ParentStage": "ResolveInitiative",
+      "SetsStage": "PlayerAttack",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The player attacks!"
+          }
+        }
+      ]
+    },
+    "playerruns": {
+      "ParentStage": "ResolveInitiative",
+      "ValidityCondition": "IsInjured",
+      "SetsStage": "NONE",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The player retreats due to his injury!"
+          }
+        }
+      ]
+    },
+    "monsterattacks": {
+      "ParentStage": "ResolveInitiative",
+      "SetsStage": "MonsterAttack",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The monster attacks!"
+          }
+        }
+      ]
+    },
+    "monsterblocks": {
+      "ParentStage": "PlayerAttack",
+      "SetsStage": "PlayerAttack",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The monster blocks!  The player presses the attack!"
+          }
+        }
+      ]
+    },
+    "monsterdodges": {
+      "ParentStage": "PlayerAttack",
+      "SetsStage": "Initiative",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The monster dodges!"
+          }
+        }
+      ]
+    },
+    "monstercounters": {
+      "ParentStage": "PlayerAttack",
+      "SetsStage": "MonsterAttack",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The monster blocks and performs a counter-attack!"
+          }
+        }
+      ]
+    },
+    "playerblocks": {
+      "ParentStage": "MonsterAttack",
+      "SetsStage": "MonsterAttack",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The player blocks!  The monster presses the attack!"
+          }
+        }
+      ]
+    },
+    "playerdodges": {
+      "ParentStage": "MonsterAttack",
+      "SetsStage": "Initiative",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The player dodges!"
+          }
+        }
+      ]
+    },
+    "playercounters": {
+      "ParentStage": "MonsterAttack",
+      "SetsStage": "PlayerAttack",
+      "Steps": [
+        {
+          "Function": "Description",
+          "Parameters": {
+            "Description": "The player blocks and performs a counter-attack!"
+          }
+        }
+      ]
+    },
+    "playerhit": {
+      "ParentStage": "MonsterAttack",
+      "SetsStage": "Injury",
+      "Steps": [
+        {
+          "Function": "UpdateObjectToProperty",
+          "Parameters": {
+            "Template": "Injury",
+            "Path": "Signals",
+            "Property": "Injury",
+            "CreationParams": {
+              "InjuryTarget": "Player"
+            },
+            "Description": "The player is struck!"
+          }
+        }
+      ]
+    },
+    "monsterhit": {
+      "ParentStage": "PlayerAttack",
+      "SetsStage": "Injury",
+      "Steps": [
+        {
+          "Function": "UpdateObjectToProperty",
+          "Parameters": {
+            "Template": "Injury",
+            "Path": "Signals",
+            "Property": "Injury",
+            "CreationParams": {
+              "InjuryTarget": "Monster"
+            },
+            "Description": "The monster is struck!"
+          }
+        }
+      ]
+    }
+  }
+}

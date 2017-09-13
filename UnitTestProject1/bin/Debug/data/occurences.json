@@ -1,0 +1,30 @@
+{
+  "Actions": [
+    {
+      "Description": "The bardmaid rebuffs the bard's attempts to flirt with her.",
+      "Actor": {
+        "Actions": [ "flirt", "bravado" ],
+        "Upholds": [ "ego", "lust" ],
+        "Forsakes": [ "duty", "loyalty" ]
+      },
+      "Target": {
+        "Actions": [ "rebuff" ],
+        "Upholds": [ "loyalty", "pride" ],
+        "Forsakes": [ "lust","ego" ]
+      }
+    },
+    {
+      "Description": "The guilty prisoner escapes after the door is opened by his friend the guard",
+      "Actor": {
+        "Actions": [ "emancipate" ],
+        "Upholds": [ "friendship" ],
+        "Forsakes": [ "duty" ]
+      },
+      "Target": {
+        "Actions": [ "flee" ],
+        "Upholds": [ "freedom" ],
+        "Forsakes": [ "justice" ]
+      }
+    }
+  ]
+}

@@ -21,22 +21,22 @@ namespace UnitTestProject1
              */
             World world = new World()
             {
-                Agents =
+                Agents = new List<Agent>()
                 {
                     new Agent()
                     {
                         Name = "Usurper",
-                        Tags = { "Ambitious" }
+                        Tags = new List<string>() { "Ambitious" }
                     },
                     new Agent()
                     {
                         Name = "King",
-                        Tags = { "Unjust" }
+                        Tags = new List<string>() { "Unjust" }
                     },
                     new Agent()
                     {
                         Name = "Witness",
-                        Tags = { "Ambitious" }
+                        Tags = new List<string>() { "Ambitious" }
                     }
                 }
             };
@@ -57,15 +57,15 @@ namespace UnitTestProject1
                 Witness = "Witness",
                 ActorRole = new Role()
                 {
-                    Actions =  { "Dethrone" },
-                    Upholds =  { "Power" },
-                    Forsakes = { },
+                    Actions = new List<string>() { "Dethrone" },
+                    Upholds = new List<string>() { "Power" },
+                    Forsakes = new List<string>() { },
                 },
                 TargetRole = new Role()
                 {
-                    Actions = { },
-                    Upholds = { },
-                    Forsakes = { },
+                    Actions = new List<string>() { },
+                    Upholds = new List<string>() { },
+                    Forsakes = new List<string>() { },
                 }
             };
 
