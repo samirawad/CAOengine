@@ -36,7 +36,20 @@ namespace UnitTestProject1
                     new Agent()
                     {
                         Name = "Witness",
-                        Tags = new List<string>() { "Ambitious", "Greedy" }
+                        Tags = new List<string>() { "Ambitious", "Greedy" },
+                        Relationships = new Dictionary<string, Relationship>()
+                        {
+                            {"King", new Relationship() {
+                                Actor = "King",
+                                Opinions = new List<Opinion>() {
+                                    new Opinion()
+                                    {
+                                        Judgement = "Rich",
+                                        Reason = "Because he's the king, duh."
+                                    }
+                                }
+                            }}
+                        }
                     }
                 }
             };

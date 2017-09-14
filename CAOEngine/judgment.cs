@@ -154,7 +154,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = "All true: " + Desc;
+                    Desc = "All true: " + Desc + Environment.NewLine;
                 }
                 return result;
             }},
@@ -192,7 +192,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Target + " upheld the ideal(s): " + String.Join(",", upheld);
+                    Desc = Desc + o.Target + " upheld the ideal(s): " + String.Join(",", upheld) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -230,7 +230,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Target + " has forsaken the ideal(s): " + String.Join(",", forsaken);
+                    Desc = Desc + o.Target + " has forsaken the ideal(s): " + String.Join(",", forsaken) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -249,7 +249,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Actor + " has forsaken the ideal(s): " + String.Join(",", forsaken);
+                    Desc = Desc + o.Actor + " has forsaken the ideal(s): " + String.Join(",", forsaken) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -279,7 +279,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Actor + " is considered by " + judge.Name + " to be: " + String.Join(",", actorTags);
+                    Desc = Desc + o.Actor + " is considered by " + judge.Name + " to be: " + String.Join(",", actorTags) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -308,7 +308,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Actor + " is considered by " + judge.Name + " to be: " + String.Join(",", tags);
+                    Desc = Desc + o.Actor + " is considered by " + judge.Name + " to be: " + String.Join(",", tags) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -342,7 +342,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Target + " is considered by " + judge.Name + " to be: " + String.Join(",", targetTags);
+                    Desc = Desc + o.Target + " is considered by " + judge.Name + " to be: " + String.Join(",", targetTags) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -371,7 +371,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Target + " is considered by " + judge.Name + " to be: " + String.Join(",", tags);
+                    Desc = Desc + o.Target + " is considered by " + judge.Name + " to be: " + String.Join(",", tags) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -399,7 +399,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + judge.Name + " posseses the tag(s): " + String.Join(",", selftags);
+                    Desc = Desc + judge.Name + " posseses the tag(s): " + String.Join(",", selftags) + Environment.NewLine;
                 }
                 return result;
             }},
@@ -439,7 +439,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = Desc + o.Target + " performed the action(s): " + String.Join(",", targetActions);
+                    Desc = Desc + o.Target + " performed the action(s): " + String.Join(",", targetActions) + Environment.NewLine;
                 }
                 return result;
             }},
