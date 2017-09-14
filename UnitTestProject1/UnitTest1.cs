@@ -31,12 +31,12 @@ namespace UnitTestProject1
                     new Agent()
                     {
                         Name = "King",
-                        Tags = new List<string>() { "Unjust" }
+                        Tags = new List<string>() { "Unjust", "Rich" }
                     },
                     new Agent()
                     {
                         Name = "Witness",
-                        Tags = new List<string>() { "Ambitious" }
+                        Tags = new List<string>() { "Ambitious", "Greedy" }
                     }
                 }
             };

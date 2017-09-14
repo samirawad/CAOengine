@@ -28,25 +28,6 @@
           {
             "Description": "Somoneone {0} bragged to me.",
             "ActorAny": [ "rich", "attractive" ]
-          },
-          { "SelfAny": [ "target" ] },
-          {
-            "Any": [
-              {
-                "Description": "I'm young, ugly and stupid",
-                "All": [
-                  { "SelfMaximumAge": 19 },
-                  { "SelfAll": [ "ugly", "stupid" ] }
-                ]
-              },
-              {
-                "Description": "I'm not rich, and I'm insecure or shy ",
-                "All": [
-                  { "SelfNone": [ "rich" ] },
-                  { "SelfAny": [ "insecure", "shy" ] }
-                ]
-              }
-            ]
           }
         ]
       },
@@ -60,6 +41,12 @@
   },
   "TargetJudgement": {
     "Any": [
+      {
+        "All": [
+          { "SelfAny": [ "Greedy" ] },
+          { "TargetAny": [ "Rich" ] }
+        ]
+      },
       {
         "Description": "Envious of those who uphold pride or tenacity",
         "TargetUpholds": [ "Pride", "Tenacity" ]
@@ -78,7 +65,7 @@
             "SelfAny": [ "Greedy" ]
           },
           {
-            "ActorActionAny": [ "gift" ]
+            "ActorActionsAny": [ "gift" ]
           }
         ]
       },

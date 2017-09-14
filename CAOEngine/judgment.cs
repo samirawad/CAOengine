@@ -26,7 +26,7 @@ namespace ConditionFramework
             // For each Actor, Target and witness....
             return world;
         }
-        
+
         // Judge the occurence from the perspective of the witness actor.
         // Pull them from the world by name, add their judgement then return the world.
         public World FormJudgement(string judgeName, Occurrence occurence, World world)
@@ -39,20 +39,35 @@ namespace ConditionFramework
 
             // If the current relationship doesn't exist, this occurence we begin a new one
             // It's the relationship we'll be checking for tags, not the actual subject...
-            Relationship currentRelationship = judge.Relationships?[occurence.Actor];
-            if (currentRelationship == null)
+            if (judge.Relationships == null)
             {
-                currentRelationship = new Relationship()
+                judge.Relationships = new Dictionary<string, Relationship>()
                 {
-                    Actor = occurence.Actor,
-                    Opinions = new List<Opinion>()
+                    {
+                        occurence.Actor, new Relationship()
+                        {
+                            Actor = occurence.Actor,
+                            Opinions = new List<Opinion>()
+                        }
+                    }
                 };
+            }
+            else
+            {
+                if (!judge.Relationships.ContainsKey(occurence.Actor))
+                {
+                    judge.Relationships.Add(occurence.Actor, new Relationship()
+                    {
+                        Actor = occurence.Actor,
+                        Opinions = new List<Opinion>()
+                    });
+                }
             }
 
             string judgementReason = "";
-            if(Judgement.JudgementIsValid(ref judgementReason, ActorJudgement, occurence, judge))
+            if (Judgement.JudgementIsValid(ref judgementReason, ActorJudgement, occurence, judge))
             {
-                currentRelationship.Opinions.Add(new Opinion()
+                judge.Relationships[occurence.Actor].Opinions.Add(new Opinion()
                 {
                     Judgement = JudgementTag,
                     Reason = judgementReason
@@ -65,20 +80,20 @@ namespace ConditionFramework
 
             // If the current relationship doesn't exist, this occurence we begin a new one
             // It's the relationship we'll be checking for tags, not the actual subject...
-            currentRelationship = judge.Relationships?[occurence.Target];
-            if (currentRelationship == null)
+
+            if (!judge.Relationships.ContainsKey(occurence.Target))
             {
-                currentRelationship = new Relationship()
+                judge.Relationships.Add(occurence.Target, new Relationship()
                 {
-                    Actor = occurence.Actor,
+                    Actor = occurence.Target,
                     Opinions = new List<Opinion>()
-                };
+                });
             }
 
             judgementReason = "";
             if (Judgement.JudgementIsValid(ref judgementReason, TargetJudgement, occurence, judge))
             {
-                currentRelationship.Opinions.Add(new Opinion()
+                judge.Relationships[occurence.Target].Opinions.Add(new Opinion()
                 {
                     Judgement = JudgementTag,
                     Reason = judgementReason
@@ -109,7 +124,7 @@ namespace ConditionFramework
                 }
                 else
                 {
-                    if(ConditionDict.ContainsKey(p.Name))
+                    if (ConditionDict.ContainsKey(p.Name))
                     {
                         result = ConditionDict[p.Name](ref Desc, c, o, judge);
                     }
