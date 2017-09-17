@@ -24,6 +24,18 @@ namespace ConditionFramework
         public World JudgeOccurence(Occurrence occurence, World world)
         {
             // For each Actor, Target and witness....
+
+            // The Actor's judgements
+            string actor = occurence.Actor;
+            world = FormJudgement(actor, occurence, world);
+
+            // The Actor's judgements
+            string target = occurence.Target;
+            world = FormJudgement(target, occurence, world);
+
+            // The Witness' judgements
+            string witness = occurence.Witness;
+            world = FormJudgement(witness, occurence, world);
             return world;
         }
 
