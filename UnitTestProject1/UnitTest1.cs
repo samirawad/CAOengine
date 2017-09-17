@@ -98,7 +98,7 @@ namespace UnitTestProject1
 
             // Judge the entire occurence
             world = judgement.JudgeOccurence(occurence, world);
-            
+            Assert.IsTrue(world.Agents.TrueForAll(a => a.Relationships.Count > 0));
             
 
         }

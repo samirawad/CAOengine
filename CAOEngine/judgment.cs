@@ -417,7 +417,27 @@ namespace ConditionFramework
             }},
             // This returns if the judge posesesses ALL of the tags specified in c
             {"SelfAll", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
-                throw new Exception("SelfAll not implemeted");
+                // The tags we're checking
+                var tags = (c["SelfAll"] as JArray).Values();
+
+                // Are all of the opinions contained in the tags?
+                bool result = true;
+                List<string> selftags = new List<string>();
+                foreach(var tag in tags)
+                {
+                    if(!judge.Tags.Any(selftag => {
+                        return selftag == tag.Value<string>();
+                    }))
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+                if(result)
+                {
+                    Desc = Desc + judge.Name + " posseses the tag(s): " + String.Join(",", tags) + Environment.NewLine;
+                }
+                return result;
             }},
             // This returns true if the Actor in the occurence is performing any of the actions specified in c
             {"ActorActionsAny", (ref string Desc, JObject c, Occurrence o, Agent judge) => {
