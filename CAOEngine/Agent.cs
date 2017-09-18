@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,9 @@ namespace ConditionFramework
         // For example: An actor with the 'kind' tag will likely form the 'contempt' relationship
         // with any actor who upholds 'cruelty' in an occurence.
         public List<string> Tags;
+
+        // Miscelaneous additional data we wish to associate to this agent
+        public JObject Data;
     }
 
 }

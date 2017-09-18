@@ -6,8 +6,8 @@
         "World": {}
       }
     },
-    "AllNPCs": {
-      "From": [ "$..NPCs" ],
+    "AllAgents": {
+      "From": [ "$..Agents" ],
       "Groups": {
         "AllNPCs": {}
       }
@@ -22,26 +22,25 @@
 
   },
   "Actions": {
-    "CreateNPC": {
-      "SetsStage": "CreateNPC",
-      "RequiresEmpty": "AllNPCs",
-      "Description": "Make npcs"
+    "CreateAgents": {
+      "SetsStage": "CreateAgents",
+      "RequiresEmpty": "AllAgents",
+      "Description": "Create Agents"
     }
   },
   "Outcomes": {
-    "NPCcreated": {
-      "ParentStages": [ "CreateNPC" ],
+    "AgentsCreated": {
+      "ParentStages": [ "CreateAgents" ],
       "SetsStage": "NONE",
       "Selection": "World",
       "Steps": [
         {
           "Function": "CreateObjectToCollection",
           "Parameters": {
-            "Target": "World",
             "Template": "Agent",
-            "Collection": "NPCs",
+            "Collection": "Agents",
             "Number": 10,
-            "Description": "<Number> NPC Agents created"
+            "Description": "<Number> Agents created"
           }
         }
       ]

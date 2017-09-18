@@ -31,8 +31,6 @@ namespace ConditionFramework
 
         public JObject WorldDoc; // Stores all game state that isn't stored on actors
 
-        public List<Agent> Agents; // All agents in the world.
-
         public List<Judgement> Judgements; // Library of functions which control how judgements are made
 
         public Dictionary<string, Occurrence> History = new Dictionary<string, Occurrence>();
@@ -44,6 +42,7 @@ namespace ConditionFramework
             string basedir = AppDomain.CurrentDomain.BaseDirectory + @"\data";
             string actionDir = basedir + @"\actions";
             string templateDir = basedir + @"\templates";
+            string judgementDir = basedir + @"\judgements";
 
             // The game world
             JObject myJson = JObject.Parse(File.ReadAllText(Path.Combine(new string[] { basedir, "world.json" })));
@@ -51,29 +50,40 @@ namespace ConditionFramework
             WorldDoc = myJson;
 
             // Object Templates
+            if (!Directory.Exists(templateDir)) throw new Exception("No judgement subdir exists!  Please place judgements in a subdirectory called 'judgements'.");
             string[] templateFiles = Directory.GetFiles(templateDir, "*.json");
             if (templateFiles.Length == 0) throw new Exception("No templates found!");
             JObject templates = JObject.Parse(File.ReadAllText(Path.Combine(new string[] { templateDir, templateFiles[0] })));
-            for(int i = 1; i < templateFiles.Length; i++)
+            for (int i = 1; i < templateFiles.Length; i++)
             {
                 var currTemplateFile = JObject.Parse(File.ReadAllText(Path.Combine(new string[] { templateDir, templateFiles[i] })));
-                foreach(var currTemplate in currTemplateFile.Children())
+                foreach (var currTemplate in currTemplateFile.Children())
                 {
                     templates.Add(currTemplate);
                 }
             }
             Templates = templates;
 
+            string[] judgementFiles = Directory.GetFiles(judgementDir, "*.json");
+            if (judgementFiles.Length == 0) throw new Exception("No judgements found!");
+            Judgements = new List<Judgement>();
+            for (int i = 1; i < judgementFiles.Length; i++)
+            {
+                string currJudgementFile  = Path.Combine(new string[] { actionDir, judgementFiles[i] });
+                Judgement currentJudgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(currJudgementFile));
+                Judgements.Add(currentJudgement);
+            }
+
             // The game libraries can be split across multiple files in the action directory.
             // They are all loaded into the ActionLibrary Actions dictionary.
             string[] actionFiles = Directory.GetFiles(actionDir, "*.json");
             string currActionFile = Path.Combine(new string[] { actionDir, actionFiles[0] });
             ActionLibrary = JsonConvert.DeserializeObject<WorldLibrary>(File.ReadAllText(currActionFile));
-            for (int i = 1; i< actionFiles.Length; i++)
+            for (int i = 1; i < actionFiles.Length; i++)
             {
                 currActionFile = Path.Combine(new string[] { actionDir, actionFiles[i] });
                 WorldLibrary currLib = JsonConvert.DeserializeObject<WorldLibrary>(File.ReadAllText(currActionFile));
-                foreach(var currSelector in currLib.Selectors)
+                foreach (var currSelector in currLib.Selectors)
                 {
                     ActionLibrary.Selectors.Add(currSelector.Key, currSelector.Value);
                 }
@@ -89,7 +99,7 @@ namespace ConditionFramework
                 {
                     ActionLibrary.Actions.Add(currAction.Key, currAction.Value);
                 }
-                foreach(var currOutcome in currLib.Outcomes)
+                foreach (var currOutcome in currLib.Outcomes)
                 {
                     ActionLibrary.Outcomes.Add(currOutcome.Key, currOutcome.Value);
                 }

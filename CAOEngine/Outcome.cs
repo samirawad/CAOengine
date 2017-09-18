@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,11 +108,6 @@ namespace ConditionFramework
             }
             return result;
         }
-
-        /*
-         * If a 'ROLES' collection is found in the parameters, we know to update memories and relations for the entities of that collection.
-         * Also, we can perform outcome functions on the items in the ROLES collection. 
-         */
 
         // IF it resolves to a jtoken that means a single value, array or compound object.  
         private Dictionary<string, outcomeDel> OutcomeFunctions = new Dictionary<string, outcomeDel>()
@@ -255,8 +251,6 @@ namespace ConditionFramework
              *  TODO: The Occurence needs to be in a new format.  The type of occurence, so it can be judged,
              *  also the occurence upholds or forsakes ideals
              */
-            
-            
             // In this case, t represents the particpants in an occurence.
 
             // The occurence requires a unique id which can be referenced in the memory of participating entities
@@ -264,23 +258,21 @@ namespace ConditionFramework
             string description = (string) p["Description"];
 
             // An occurence has a description and a set of roles.
-            // Each role in an occurence is a path to a JObject in the world document,
-            // with the details of that role as a JObject
-            Occurrence newOccurence = new Occurrence()
-            {
-                Description = description,
-                //Roles = new List<OccurrenceRole>()
-            };
+            // Deserialize it from the parameters.  We're deserializing the description and roles
+            // The specific participants will come from the t parameter
+
+            Occurrence newOccurence = p["Occurence"].ToObject<Occurrence>();
 
             // The dictionary t contains the names of the partcipating groups as the key, and the paths of all the participants as the value
             // We can use the key to obtain the details from the parameter object p.
             // We can then create the occurenceroles in the occurence
             foreach(string groupKey in t.Keys)
             {
+                // groupMembers here implies that for an occurence, there could be multiple Actors, Targets, and Witnesses.
                 string[] groupMembers = t[groupKey];
                 foreach(string memberPath in groupMembers)
                 {
-
+                    
                 }
             }
 

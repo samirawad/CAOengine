@@ -75,7 +75,7 @@ namespace ConditionFramework
                 JArray switchvalues = (JArray) p["switches"];
                 foreach(var currswitchvalue in switchvalues)
                 {
-                    if(g[currswitchvalue["path"].Value<string>()].Equals(currswitchvalue["value"]))
+                    if(g.SelectToken(currswitchvalue["path"].Value<string>()).Equals(currswitchvalue["value"]))
                     {
                         return currswitchvalue["return"];
                     }

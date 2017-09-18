@@ -23,7 +23,7 @@ namespace ConditionFramework
         // Update the relationships of each participant and witness of an occurence
         public World JudgeOccurence(Occurrence occurence, World world)
         {
-            // For each Actor, Target and witness....
+            // Add the occurence to the world's history of events.
 
             // The Actor's judgements
             string actor = occurence.Actor;
@@ -43,8 +43,7 @@ namespace ConditionFramework
         // Pull them from the world by name, add their judgement then return the world.
         public World FormJudgement(string judgeName, Occurrence occurence, World world)
         {
-            Agent judge = world.Agents.Find(a => a.Name == judgeName);
-
+            Agent judge = world.WorldDoc.SelectToken(string.Format("$..Agents[?(@.Name == '{0}')]",judgeName)).ToObject<Agent>();
             /////////////////////
             // Judge the Actor // 
             /////////////////////
@@ -111,7 +110,8 @@ namespace ConditionFramework
                     Reason = judgementReason
                 });
             }
-
+            // Replace the updated judge
+            world.WorldDoc.ReplacePath<JToken>(string.Format("$..Agents[?(@.Name == '{0}')]", judgeName), JToken.FromObject(judge));
             return world;
         }
 
@@ -166,7 +166,7 @@ namespace ConditionFramework
                 }
                 if(result)
                 {
-                    Desc = "All true: " + Desc + Environment.NewLine;
+                    Desc = "All true: " + Environment.NewLine + Desc;
                 }
                 return result;
             }},
@@ -182,10 +182,6 @@ namespace ConditionFramework
                         result = true;
                         break;
                     }
-                }
-                if(result)
-                {
-                    Desc = "At least one true: " + Desc + Environment.NewLine;
                 }
                 return result;
             }},

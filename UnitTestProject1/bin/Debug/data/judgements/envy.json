@@ -1,0 +1,103 @@
+{
+  "JudgementTag": "Envy",
+  "ActorJudgement": {
+    "Any": [
+      {
+        "All": [
+          { "SelfAny": [ "Ambitious" ] },
+          { "ActorUpholds": [ "Power" ] }
+        ]
+      },
+      {
+        "All": [
+          { "SelfAll": [ "Kind", "Cowardly" ] },
+          { "ActorActionsAny": [ "Confront" ] },
+          { "TargetUpholds": [ "Cruelty" ] },
+          { "TargetAny": [ "Powerful", "Rich" ] }
+        ]
+      },
+      {
+        "All": [
+          { "SelfAny": [ "Greedy" ] },
+          { "Upholds": [ "Greed" ] }
+        ]
+      },
+      {
+        "All": [
+          { "ActorActionsAny": [ "brag" ] },
+          {
+            "Description": "Somoneone {0} bragged to me.",
+            "ActorAny": [ "rich", "attractive" ]
+          }
+        ]
+      },
+      {
+        "All": [
+          { "ActorActionsAny": [ "flirt", "dance", "kiss" ] },
+          { "TargetAny": [ "partner", "attracted" ] }
+        ]
+      }
+    ]
+  },
+  "TargetJudgement": {
+    "Any": [
+      {
+        "All": [
+          { "SelfAny": [ "Greedy" ] },
+          { "TargetAny": [ "Rich" ] }
+        ]
+      },
+      {
+        "Description": "Envious of those who uphold pride or tenacity",
+        "TargetUpholds": [ "Pride", "Tenacity" ]
+      },
+      {
+        "Description": "Envious of those who display patience in the face of bullying",
+        "All": [
+          { "ActorActionsAny": [ "Bullying" ] },
+          { "TargetUpholds": [ "Patience" ] }
+        ]
+      },
+      {
+        "Description": "My greedy nature makes me envious of those who recieve gifts",
+        "All": [
+          {
+            "SelfAny": [ "Greedy" ]
+          },
+          {
+            "ActorActionsAny": [ "gift" ]
+          }
+        ]
+      },
+      {
+        "Description": "My vain nature makes me envious of those who recieve amorous attention",
+        "All": [
+          { "SelfAny": [ "vain" ] },
+          { "ActorActionsAny": [ "flirt" ] },
+          {
+            "Any": [
+              {
+                "All": [
+                  { "SelfAny": [ "male" ] },
+                  { "TargetAny": [ "male" ] }
+                ]
+              },
+              {
+                "All": [
+                  { "SelfAny": [ "female" ] },
+                  { "TargetAny": [ "female" ] }
+                ]
+              }
+            ]
+          },
+          {
+            "Any": [
+              { "ActorAny": [ "beautiful", "popular" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "SelfJudgement": {}
+}

@@ -1,7 +1,7 @@
 ﻿{
   "Selectors": {
     "SelectSmallMaleGroup": {
-      "From": [ "AllNPCs" ],
+      "From": [ "AllAgents" ],
       "Groups": {
         "SmallMaleGroup": {
           "Filter": "IsMale",
@@ -14,7 +14,7 @@
       }
     },
     "SelectSmallFemaleGroup": {
-      "From": [ "AllNPCs" ],
+      "From": [ "AllAgents" ],
       "Groups": {
         "SmallFemaleGroup": {
           "Filter": "IsFemale",
@@ -47,23 +47,20 @@
     "IsMale": {
       "Function": "HasValue",
       "Params": {
-        "Property": "Gender",
+        "Property": "Data.Gender",
         "Value": "male"
       }
     },
     "IsFemale": {
       "Function": "HasValue",
       "Params": {
-        "Property": "Gender",
+        "Property": "Data.Gender",
         "Value": "female"
       }
     }
   },
   "CompoundFilters": {
-    "Trans": {
-      "Condition": "AllMustBeTrue",
-      "Filters": [ "IsMale", "IsFemale" ]
-    }
+
   },
   "Actions": {
     "DoChat": {
@@ -90,36 +87,22 @@
         {
           "Function": "AddOccurence",
           "Parameters": {
-            "Roles": {
-              "Speaker": {
-                "Details": {
-                  "Description": "<Speaker.Name> chatted to <ChatTarget.Name>",
-                  "Action": {
-                    "Actions": [ "Spoke" ],
-                    "Targets": [ "ChatTarget" ]
-                  }
-                }
+            "Occurence": {
+              "Description": "The pretty girl gets chatted up at a party.",
+              "Actor": "Speaker",
+              "Target": "ChatTarget",
+              "Witness": "Audience",
+              "ActorRole": {
+                "Actions": [ "Flirt" ],
+                "Upholds": [ "Confidence", "Hedonism" ],
+                "Forsakes": [ "Celibacy" ]
               },
-              "ChatTarget": {
-                "Details": {
-                  "Description": "Was chatted to by a guy",
-                  "Action": {
-                    "Actors": [ "ChatTarget" ],
-                    "Actions": [ "Listened" ],
-                    "Targets": [ "Speaker" ]
-                  }
-                }
-              },
-              "Audience": {
-                "Details": {
-                  "Description": "Saw a conversation",
-                  "Action": {
-                    "Actions": [ "Witnessed", "Conversation" ]
-                  }
-                }
+              "TargetRole": {
+                "Actions": [ "Flirt" ],
+                "Upholds": [ "Attractiveness", "Hedonism" ],
+                "Forsakes": [ "Celibacy" ]
               }
-            },
-            "Description": "A flirt occured with witnesses"
+            }
           }
         }
       ]

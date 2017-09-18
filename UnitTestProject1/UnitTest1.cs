@@ -4,7 +4,7 @@ using ConditionFramework;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-
+using Newtonsoft.Json.Linq;
 
 namespace UnitTestProject1
 {
@@ -13,15 +13,22 @@ namespace UnitTestProject1
     {
         string Basedir = AppDomain.CurrentDomain.BaseDirectory + @"\data\";
 
+
+        [TestMethod]
+        public void TestLoadWorld()
+        {
+            World world = new World()
+            {
+
+            };
+        }
         [TestMethod]
         public void TestFormJudgement()
         {
             /*
              *  We'll need a new outcome which generates new actors into the world
              */
-            World world = new World()
-            {
-                Agents = new List<Agent>()
+            var Agents = new List<Agent>()
                 {
                     new Agent()
                     {
@@ -51,7 +58,13 @@ namespace UnitTestProject1
                             }}
                         }
                     }
-                }
+                };
+            World world = new World()
+            {
+               WorldDoc = new JObject()
+               {
+                   {"Agents", JToken.FromObject(Agents) }
+               }
             };
             // Loads the judgement data for envy
             Judgement judgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(Basedir + "envy.json"));
@@ -84,7 +97,7 @@ namespace UnitTestProject1
 
             // Judge the occurence from the point of view of the witness
             world = judgement.FormJudgement("Witness", occurence, world);
-            Agent judge = world.Agents.Find(p => p.Name == "Witness");
+            Agent judge = world.WorldDoc.SelectToken("$..Agents[?(@.Name == 'Witness')]").ToObject<Agent>();
 
             // The judge should now have two relationships, one the actor and the target
             Assert.IsTrue(judge.Relationships.Count == 2);
@@ -95,12 +108,8 @@ namespace UnitTestProject1
                     return opinion.Judgement == "Envy";
                 })
             );
-
-            // Judge the entire occurence
-            world = judgement.JudgeOccurence(occurence, world);
-            Assert.IsTrue(world.Agents.TrueForAll(a => a.Relationships.Count > 0));
-            
-
         }
+
+
     }
 }

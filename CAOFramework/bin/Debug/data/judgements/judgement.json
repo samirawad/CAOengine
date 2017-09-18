@@ -1,0 +1,18 @@
+{
+  "JudgementTag": "Judgement",
+  "ActorJudgement": {
+    "Any": [
+     
+    ]
+  },
+  "TargetJudgement": {
+    "Any": [
+
+    ]
+  },
+  "SelfJudgement": {
+    "Any": [
+
+    ]
+  }
+}

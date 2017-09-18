@@ -18,6 +18,7 @@ namespace ConditionFramework
         public string How;
         public JObject Params;
     }
+
     public class Selector
     {
         public string How;                              // The manner of selection (random, single, etc)
