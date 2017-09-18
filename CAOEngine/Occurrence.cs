@@ -9,6 +9,7 @@ namespace ConditionFramework
 {
     public class Occurrence
     {
+        public string ID;
         public string Description;
         public string Actor;
         public string Target;

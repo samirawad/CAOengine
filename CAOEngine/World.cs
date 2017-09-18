@@ -67,7 +67,7 @@ namespace ConditionFramework
             string[] judgementFiles = Directory.GetFiles(judgementDir, "*.json");
             if (judgementFiles.Length == 0) throw new Exception("No judgements found!");
             Judgements = new List<Judgement>();
-            for (int i = 1; i < judgementFiles.Length; i++)
+            for (int i = 0; i < judgementFiles.Length; i++)
             {
                 string currJudgementFile  = Path.Combine(new string[] { actionDir, judgementFiles[i] });
                 Judgement currentJudgement = JsonConvert.DeserializeObject<Judgement>(File.ReadAllText(currJudgementFile));

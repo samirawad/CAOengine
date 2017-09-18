@@ -29,7 +29,7 @@ namespace ConditionFramework
             string actor = occurence.Actor;
             world = FormJudgement(actor, occurence, world);
 
-            // The Actor's judgements
+            // The Target's judgements
             string target = occurence.Target;
             world = FormJudgement(target, occurence, world);
 
@@ -41,9 +41,9 @@ namespace ConditionFramework
 
         // Judge the occurence from the perspective of the witness actor.
         // Pull them from the world by name, add their judgement then return the world.
-        public World FormJudgement(string judgeName, Occurrence occurence, World world)
+        public World FormJudgement(string judgePath, Occurrence occurence, World world)
         {
-            Agent judge = world.WorldDoc.SelectToken(string.Format("$..Agents[?(@.Name == '{0}')]",judgeName)).ToObject<Agent>();
+            Agent judge = world.WorldDoc.SelectToken(judgePath).ToObject<Agent>();
             /////////////////////
             // Judge the Actor // 
             /////////////////////
@@ -74,15 +74,20 @@ namespace ConditionFramework
                     });
                 }
             }
-
+            // check to make sure that we're not judging the same agent for the same occurence
             string judgementReason = "";
-            if (Judgement.JudgementIsValid(ref judgementReason, ActorJudgement, occurence, judge))
+            if (!judge.Relationships[occurence.Actor].Opinions.Any(o => {
+                return o.OccurenceID == occurence.ID;
+            }))
             {
-                judge.Relationships[occurence.Actor].Opinions.Add(new Opinion()
+                if (Judgement.JudgementIsValid(ref judgementReason, ActorJudgement, occurence, judge))
                 {
-                    Judgement = JudgementTag,
-                    Reason = judgementReason
-                });
+                    judge.Relationships[occurence.Actor].Opinions.Add(new Opinion()
+                    {
+                        Judgement = JudgementTag,
+                        Reason = judgementReason
+                    });
+                }
             }
 
             ///////////////////////
@@ -102,16 +107,22 @@ namespace ConditionFramework
             }
 
             judgementReason = "";
-            if (Judgement.JudgementIsValid(ref judgementReason, TargetJudgement, occurence, judge))
+            if (!judge.Relationships[occurence.Target].Opinions.Any(o => {
+                return o.OccurenceID == occurence.ID;
+            }))
             {
-                judge.Relationships[occurence.Target].Opinions.Add(new Opinion()
+                if (Judgement.JudgementIsValid(ref judgementReason, TargetJudgement, occurence, judge))
                 {
-                    Judgement = JudgementTag,
-                    Reason = judgementReason
-                });
+                    judge.Relationships[occurence.Target].Opinions.Add(new Opinion()
+                    {
+                        Judgement = JudgementTag,
+                        Reason = judgementReason
+                    });
+                }
             }
+
             // Replace the updated judge
-            world.WorldDoc.ReplacePath<JToken>(string.Format("$..Agents[?(@.Name == '{0}')]", judgeName), JToken.FromObject(judge));
+            world.WorldDoc.ReplacePath<JToken>(judgePath, JToken.FromObject(judge));
             return world;
         }
 

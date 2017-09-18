@@ -95,6 +95,7 @@ namespace ConditionFramework
         // Find and replace any values in the description string from the parameters or game objects
         public static string formatDescription(string toFormat, JObject p)
         {
+            if (string.IsNullOrEmpty(toFormat)) return "";
             string result = toFormat;
             var tokensToReplace = Regex.Matches(toFormat, @"<([^<>]+)>");
             foreach (Match currMatch in tokensToReplace)
@@ -254,18 +255,34 @@ namespace ConditionFramework
             // In this case, t represents the particpants in an occurence.
 
             // The occurence requires a unique id which can be referenced in the memory of participating entities
-            string memoryID = System.Guid.NewGuid().ToString();
+            string occurenceID = System.Guid.NewGuid().ToString();
             string description = (string) p["Description"];
 
             // An occurence has a description and a set of roles.
             // Deserialize it from the parameters.  We're deserializing the description and roles
             // The specific participants will come from the t parameter
 
-            Occurrence newOccurence = p["Occurence"].ToObject<Occurrence>();
+            Occurrence thisOccurence = p["Occurence"].ToObject<Occurrence>();
+            thisOccurence.ID = occurenceID;
 
             // The dictionary t contains the names of the partcipating groups as the key, and the paths of all the participants as the value
-            // We can use the key to obtain the details from the parameter object p.
-            // We can then create the occurenceroles in the occurence
+            
+            foreach(string actorpath in t[thisOccurence.Actor])
+            {
+                foreach(string targetpath in t[thisOccurence.Target])
+                {
+                    foreach(string witnesspath in t[thisOccurence.Witness])
+                    {
+                        thisOccurence.Actor = actorpath;
+                        thisOccurence.Target = targetpath;
+                        thisOccurence.Witness = witnesspath;
+                        foreach(Judgement j in w.Judgements)
+                        {
+                            w = j.JudgeOccurence(thisOccurence, w);
+                        }
+                    }
+                }
+            }
             foreach(string groupKey in t.Keys)
             {
                 // groupMembers here implies that for an occurence, there could be multiple Actors, Targets, and Witnesses.
@@ -276,7 +293,7 @@ namespace ConditionFramework
                 }
             }
 
-            w.History.Add(memoryID, newOccurence);
+            w.History.Add(occurenceID, thisOccurence);
             return formatDescription(description, p);
         }}
         };
