@@ -5,7 +5,7 @@
       "Race": "SelectRace",
       "Profession": "SelectProfession"
     },
-    "Name": "RandomName",
+    "Name": "NameGenerator",
     "Ideals": "SelectIdeals",
     "Tags": "SelectTraits"
   },
@@ -40,43 +40,10 @@
         "selection": [ "male", "female" ]
       }
     },
-    "RandomName": {
-      "GivenName": {
-        "SwitchOnValues": {
-          "switches": [
-            {
-              "path": "Data.Gender",
-              "value": "male",
-              "return": "MaleFirstNameGenerator"
-            },
-            {
-              "path": "Data.Gender",
-              "value": "female",
-              "return": "FemaleFirstNameGenerator"
-            }
-          ]
-        }
-      },
-      "SurName": "LastNameGenerator"
-    },
-    "MaleFirstNameGenerator": {
-      "MarkovStr": {
-        "order": 4,
-        "minlength": 6,
-        "datafile": "male.txt"
-      }
-    },
-    "FemaleFirstNameGenerator": {
-      "MarkovStr": {
-        "order": 4,
-        "minlength": 6,
-        "datafile": "female.txt"
-      }
-    },
-    "LastNameGenerator": {
+    "NameGenerator": {
       "MarkovStr": {
         "order": 2,
-        "minlength": 8,
+        "minlength": 4,
         "datafile": "allnames.txt"
       }
     },

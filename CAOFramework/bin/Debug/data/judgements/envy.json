@@ -3,6 +3,9 @@
   "ActorJudgement": {
     "Any": [
       {
+        "ActorUpholds": [ "Hedonism" ]
+      },
+      {
         "All": [
           { "SelfAny": [ "Ambitious" ] },
           { "ActorUpholds": [ "Power" ] }
@@ -41,6 +44,9 @@
   },
   "TargetJudgement": {
     "Any": [
+      {
+        "TargetUpholds": [ "Attractiveness" ]
+      },
       {
         "All": [
           { "SelfAny": [ "Greedy" ] },

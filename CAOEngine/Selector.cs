@@ -200,6 +200,10 @@ namespace ConditionFramework
         // These paths act as direct references so we can manipulate the elements they point to.
         public static Dictionary<string, selectorDel> Selectors = new Dictionary<string, selectorDel>()
         {
+            {"All", (string[] s, JObject p) =>{
+                    return s;
+                }
+            },
             { "RndOne", (string[] s, JObject p) =>{
                 List<string> resultList = new List<string>();
                 if(s.Length > 0)

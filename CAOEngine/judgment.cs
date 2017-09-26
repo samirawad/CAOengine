@@ -74,10 +74,10 @@ namespace ConditionFramework
                     });
                 }
             }
-            // check to make sure that we're not judging the same agent for the same occurence
+            // check to make sure we haven't added this judgement tag to this agent for the same occurence
             string judgementReason = "";
             if (!judge.Relationships[occurence.Actor].Opinions.Any(o => {
-                return o.OccurenceID == occurence.ID;
+                return o.OccurenceID == occurence.ID && o.Judgement == JudgementTag;
             }))
             {
                 if (Judgement.JudgementIsValid(ref judgementReason, ActorJudgement, occurence, judge))
@@ -106,9 +106,10 @@ namespace ConditionFramework
                 });
             }
 
+            // check to make sure we haven't added this judgement tag to this agent for the same occurence
             judgementReason = "";
             if (!judge.Relationships[occurence.Target].Opinions.Any(o => {
-                return o.OccurenceID == occurence.ID;
+                return o.OccurenceID == occurence.ID && o.Judgement == JudgementTag;
             }))
             {
                 if (Judgement.JudgementIsValid(ref judgementReason, TargetJudgement, occurence, judge))

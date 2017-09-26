@@ -254,46 +254,44 @@ namespace ConditionFramework
              */
             // In this case, t represents the particpants in an occurence.
 
-            // The occurence requires a unique id which can be referenced in the memory of participating entities
-            string occurenceID = System.Guid.NewGuid().ToString();
             string description = (string) p["Description"];
-
             // An occurence has a description and a set of roles.
             // Deserialize it from the parameters.  We're deserializing the description and roles
             // The specific participants will come from the t parameter
 
-            Occurrence thisOccurence = p["Occurence"].ToObject<Occurrence>();
-            thisOccurence.ID = occurenceID;
-
-            // The dictionary t contains the names of the partcipating groups as the key, and the paths of all the participants as the value
+            Occurrence occurenceParams = p["Occurence"].ToObject<Occurrence>();
+            // The occurence requires a unique id which can be referenced in the memory of participating entities
+            string occurenceID = System.Guid.NewGuid().ToString();
+            occurenceParams.ID = occurenceID;
             
-            foreach(string actorpath in t[thisOccurence.Actor])
+            // The dictionary t contains the names of the partcipating groups as the key, and the paths of all the participants as the value
+
+            // There might be multiple actors, targets and witnesses.  
+            // The occurence needs to be judged from each unique viewpoint.
+            foreach (string witnesspath in t[occurenceParams.Witness])
             {
-                foreach(string targetpath in t[thisOccurence.Target])
+                foreach(string actorpath in t[occurenceParams.Actor])
                 {
-                    foreach(string witnesspath in t[thisOccurence.Witness])
+                    foreach(string targetpath in t[occurenceParams.Target])
                     {
-                        thisOccurence.Actor = actorpath;
-                        thisOccurence.Target = targetpath;
-                        thisOccurence.Witness = witnesspath;
+                        Occurrence occurence = new Occurrence()
+                        {
+                            Description = occurenceParams.Description,
+                            ID = occurenceParams.ID,
+                            Actor = actorpath,
+                            ActorRole = occurenceParams.ActorRole,
+                            Target = targetpath,
+                            TargetRole = occurenceParams.TargetRole,
+                            Witness = witnesspath
+                        };
                         foreach(Judgement j in w.Judgements)
                         {
-                            w = j.JudgeOccurence(thisOccurence, w);
+                            w = j.JudgeOccurence(occurence, w);
                         }
                     }
                 }
             }
-            foreach(string groupKey in t.Keys)
-            {
-                // groupMembers here implies that for an occurence, there could be multiple Actors, Targets, and Witnesses.
-                string[] groupMembers = t[groupKey];
-                foreach(string memberPath in groupMembers)
-                {
-                    
-                }
-            }
-
-            w.History.Add(occurenceID, thisOccurence);
+            w.History.Add(occurenceID, occurenceParams);
             return formatDescription(description, p);
         }}
         };

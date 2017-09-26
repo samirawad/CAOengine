@@ -50,7 +50,7 @@ namespace ConditionFramework
             WorldDoc = myJson;
 
             // Object Templates
-            if (!Directory.Exists(templateDir)) throw new Exception("No judgement subdir exists!  Please place judgements in a subdirectory called 'judgements'.");
+            if (!Directory.Exists(templateDir)) throw new Exception("No template subdir exists!  Please place judgements in a subdirectory called 'judgements'.");
             string[] templateFiles = Directory.GetFiles(templateDir, "*.json");
             if (templateFiles.Length == 0) throw new Exception("No templates found!");
             JObject templates = JObject.Parse(File.ReadAllText(Path.Combine(new string[] { templateDir, templateFiles[0] })));
@@ -64,6 +64,7 @@ namespace ConditionFramework
             }
             Templates = templates;
 
+            if (!Directory.Exists(judgementDir)) throw new Exception("No judgement subdir exists!  Please place judgements in a subdirectory called 'judgements'.");
             string[] judgementFiles = Directory.GetFiles(judgementDir, "*.json");
             if (judgementFiles.Length == 0) throw new Exception("No judgements found!");
             Judgements = new List<Judgement>();
@@ -76,6 +77,7 @@ namespace ConditionFramework
 
             // The game libraries can be split across multiple files in the action directory.
             // They are all loaded into the ActionLibrary Actions dictionary.
+            if (!Directory.Exists(actionDir)) throw new Exception("No action subdir exists!  Please place judgements in a subdirectory called 'judgements'.");
             string[] actionFiles = Directory.GetFiles(actionDir, "*.json");
             string currActionFile = Path.Combine(new string[] { actionDir, actionFiles[0] });
             ActionLibrary = JsonConvert.DeserializeObject<WorldLibrary>(File.ReadAllText(currActionFile));

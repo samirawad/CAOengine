@@ -26,8 +26,16 @@
         }
       }
     },
+    "SelectWitnesses": {
+      "From": [ "AllAgents" ],
+      "Groups": {
+        "Witnesses": {
+          "How": "All"
+        }
+      }
+    },
     "ChatGroup": {
-      "From": [ "SelectSmallMaleGroup", "SelectSmallFemaleGroup" ],
+      "From": [ "SelectSmallMaleGroup", "SelectSmallFemaleGroup", "SelectWitnesses" ],
       "Groups": {
         "Speaker": {
           "From": [ "SmallMaleGroup" ],
@@ -38,7 +46,13 @@
           "How": "RndOne"
         },
         "Audience": {
-          "NotFrom": ["Speaker","ChatTarget"]
+          "From": [ "Witnesses" ],
+          "NotFrom": [ "Speaker", "ChatTarget" ],
+          "How": "RndMulti",
+          "Params": {
+            "Min": 1,
+            "Max": 3
+          }
         }
       }
     }
